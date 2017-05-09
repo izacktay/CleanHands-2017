@@ -108,7 +108,6 @@ class SecondLevelTVC: UITableViewController {
                 let condition = dc.getCondition(index: 2)
                 if (condition == "Droplet"){
                     conditionArr[2] = true
-                    
                 }
                 
             }
