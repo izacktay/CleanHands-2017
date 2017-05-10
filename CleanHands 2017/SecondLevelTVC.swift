@@ -93,24 +93,26 @@ class SecondLevelTVC: UITableViewController {
             
             
             if (conditionArr[0] == false){
-                let condition = dc.getCondition(index: 0)
-                if (condition == "Airborne"){
+                
+                if (indexPath.row == 0){
                     conditionArr[0] = true
                 }
                 
-            }else if (conditionArr[1] == false){
-                let condition = dc.getCondition(index: 1)
-                if (condition == "Contact"){
+            }
+            if (conditionArr[1] == false){
+                if (indexPath.row == 1){
                     conditionArr[1] = true
                 }
                 
-            }else if (conditionArr[2] == false){
-                let condition = dc.getCondition(index: 2)
-                if (condition == "Droplet"){
+            }
+            if (conditionArr[2] == false){
+                if (indexPath.row == 2){
                     conditionArr[2] = true
                 }
                 
             }
+            
+        }else {
             
         }
         
@@ -144,25 +146,27 @@ class SecondLevelTVC: UITableViewController {
         tableView.allowsMultipleSelection = true
         
         if (conditionArr[0] == true){
-            let condition = dc.getCondition(index: 0)
-            if (condition == "Airborne"){
+            
+            if (indexPath.row == 0){
                 conditionArr[0] = false
             }
             
-        }else if (conditionArr[1] == true){
-            let condition = dc.getCondition(index: 1)
-            if (condition == "Contact"){
+        }
+        if (conditionArr[1] == true){
+            if (indexPath.row == 1){
                 conditionArr[1] = false
             }
             
-        }else if (conditionArr[2] == true){
-            let condition = dc.getCondition(index: 2)
-            if (condition == "Droplet"){
+        }
+        if (conditionArr[2] == true){
+            if (indexPath.row == 2){
                 conditionArr[2] = false
             }
             
         }
-
+        
+        
+        
         
         //        if(cell?.textLabel!.text == "Airborne"){
         //            airborne = false
