@@ -56,6 +56,8 @@ class SecondLevelTVC: UITableViewController {
                 label.text = condition
             }
             
+            
+            
         } else {
             
             if (conditionArr[section - 1] == true){
@@ -86,8 +88,13 @@ class SecondLevelTVC: UITableViewController {
         // ensure
         
         let section = indexPath.section
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.accessoryType = .checkmark
+        }
         
         if (section == 0){
+            
+            
             
             tableView.allowsMultipleSelection = true
             
@@ -96,23 +103,29 @@ class SecondLevelTVC: UITableViewController {
                 
                 if (indexPath.row == 0){
                     conditionArr[0] = true
+                    tableView.reloadSections([1], with: .automatic)
                 }
                 
             }
             if (conditionArr[1] == false){
                 if (indexPath.row == 1){
                     conditionArr[1] = true
+                    tableView.reloadSections([2], with: .automatic)
                 }
                 
             }
             if (conditionArr[2] == false){
                 if (indexPath.row == 2){
                     conditionArr[2] = true
+                    tableView.reloadSections([3], with: .automatic)
                 }
                 
             }
+            tableView.reloadSections([1, 2, 3], with: .automatic)
             
         }else {
+            
+            let wd = SecondLevelData(description: "sd")
             
         }
         
@@ -135,7 +148,7 @@ class SecondLevelTVC: UITableViewController {
         //        }
         
         
-        tableView.reloadSections([1, 2, 3], with: .automatic)
+        
         
         
         
@@ -144,24 +157,40 @@ class SecondLevelTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         tableView.allowsMultipleSelection = true
+        let section = indexPath.section
         
-        if (conditionArr[0] == true){
-            
-            if (indexPath.row == 0){
-                conditionArr[0] = false
-            }
-            
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.accessoryType = .none
         }
-        if (conditionArr[1] == true){
-            if (indexPath.row == 1){
-                conditionArr[1] = false
+        
+        if (section == 0){
+            
+            if (conditionArr[0] == true){
+                
+                if (indexPath.row == 0){
+                    conditionArr[0] = false
+                    tableView.reloadSections([1], with: .automatic)
+                }
+                
+                
+            }
+            if (conditionArr[1] == true){
+                if (indexPath.row == 1){
+                    conditionArr[1] = false
+                    tableView.reloadSections([2], with: .automatic)
+                }
+                
+            }
+            if (conditionArr[2] == true){
+                if (indexPath.row == 2){
+                    conditionArr[2] = false
+                    tableView.reloadSections([3], with: .automatic)
+                }
+                
             }
             
-        }
-        if (conditionArr[2] == true){
-            if (indexPath.row == 2){
-                conditionArr[2] = false
-            }
+            
+        }else{
             
         }
         
@@ -178,7 +207,7 @@ class SecondLevelTVC: UITableViewController {
         //            droplet = false
         //        }
         
-        tableView.reloadSections([1, 2, 3], with: .automatic)
+        
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

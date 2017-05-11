@@ -18,7 +18,6 @@ public class SecondLevelData {
     
     init(description : String){
         self.description = description
-        
     }
     
 }

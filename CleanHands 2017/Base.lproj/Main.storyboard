@@ -96,7 +96,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Ahhh" id="2rm-fa-uFS">
+                            <tableViewSection headerTitle="Observation Points" id="2rm-fa-uFS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="LPG-45-a8C">
                                         <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
