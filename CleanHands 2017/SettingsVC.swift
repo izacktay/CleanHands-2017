@@ -17,7 +17,7 @@ class SettingsVC: UIViewController {
 
         // Do any additional setup after loading the view.
       //dian was here
-        //justin was here
+        //justin was here 2
     }
 
     override func didReceiveMemoryWarning() {
