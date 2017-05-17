@@ -21,7 +21,7 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
             print("Mail service not available")
             return
         }
-        sendEmail()
+        
         
 
         // Uncomment the following line to preserve selection between presentations
