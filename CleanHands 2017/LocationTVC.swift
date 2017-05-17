@@ -7,19 +7,41 @@
 //
 
 import UIKit
+import MessageUI
 
-class LocationTVC: UITableViewController {
+class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
+    @IBOutlet weak var outEmail: UIBarButtonItem!
     
     let dc = DataController.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail service not available")
+            return
+        }
+        sendEmail()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func sendEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients(["15017612@myrp.edu.sg"])
+        composeVC.setSubject("'Sup")
+        composeVC.setMessageBody("Testing", isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: NSError?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +77,9 @@ class LocationTVC: UITableViewController {
         return cell
     }
     
+    @IBAction func actEmail(_ sender: UIBarButtonItem) {
+        sendEmail()
+    }
 
     /*
     // Override to support conditional editing of the table view.
