@@ -31,16 +31,16 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func sendEmail() {
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = self
-        composeVC.setToRecipients(["15017612@myrp.edu.sg"])
-        composeVC.setSubject("'Sup")
-        composeVC.setMessageBody("Testing", isHTML: false)
-        self.present(composeVC, animated: true, completion: nil)
-    }
+//    func sendEmail() {
+//        let composeVC = MFMailComposeViewController()
+//        composeVC.mailComposeDelegate = self
+//        composeVC.setToRecipients(["15017612@myrp.edu.sg"])
+//        composeVC.setSubject("'Sup")
+//        composeVC.setMessageBody("Testing", isHTML: false)
+//        self.present(composeVC, animated: true, completion: nil)
+//    }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
 
@@ -78,7 +78,15 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func actEmail(_ sender: UIBarButtonItem) {
-        sendEmail()
+        //sendEmail()
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients(["15017612@myrp.edu.sg"])
+        composeVC.setSubject("'Sup")
+        composeVC.setMessageBody("Testing", isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+        
+        
     }
 
     /*
