@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Locations-->
         <scene sceneID="DlA-1g-eoK">
             <objects>
                 <tableViewController id="A6T-9Z-Ovb" customClass="LocationTVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,13 +37,13 @@
                             <outlet property="delegate" destination="A6T-9Z-Ovb" id="lBg-fd-XMS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="bDR-wu-WH7"/>
+                    <navigationItem key="navigationItem" title="Locations" id="bDR-wu-WH7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQs-My-Mf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3184.8000000000002" y="161.46926536731635"/>
         </scene>
-        <!--Title-->
+        <!--Observations-->
         <scene sceneID="nar-sS-fzh">
             <objects>
                 <tableViewController id="UUe-Wk-5jE" customClass="ObservationsTVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -304,11 +304,12 @@
                             <outlet property="delegate" destination="UUe-Wk-5jE" id="Zrq-bX-dx7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="hgI-fO-gsR">
+                    <navigationItem key="navigationItem" title="Observations" id="hgI-fO-gsR">
                         <rightBarButtonItems>
                             <barButtonItem title="Save" id="LNu-hA-zjS">
                                 <connections>
                                     <action selector="actSaveRecords:" destination="UUe-Wk-5jE" id="zT1-OE-Ccn"/>
+                                    <segue destination="mPF-qS-wg5" kind="show" id="NyW-XT-N0A"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Settings" id="6ot-TM-EGd"/>
@@ -323,7 +324,7 @@
             </objects>
             <point key="canvasLocation" x="4060" y="160.56971514242881"/>
         </scene>
-        <!--SettingsVC-->
+        <!--Settings-->
         <scene sceneID="nnq-KK-GPQ">
             <objects>
                 <viewController id="mPF-qS-wg5" customClass="SettingsVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -336,10 +337,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-7G-wuG">
-                                <rect key="frame" x="310" y="28" width="51" height="31"/>
+                                <rect key="frame" x="310" y="72" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-lS-iS3">
-                                <rect key="frame" x="16" y="33" width="42" height="21"/>
+                                <rect key="frame" x="16" y="77" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -353,6 +354,7 @@
                             <constraint firstItem="UPJ-7G-wuG" firstAttribute="top" secondItem="kte-gY-yHx" secondAttribute="bottom" constant="8" id="j2u-fX-ffI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="n9c-gz-bYi"/>
                     <connections>
                         <outlet property="outSwitch" destination="UPJ-7G-wuG" id="BCE-4c-JJV"/>
                     </connections>
@@ -415,7 +417,7 @@
             </objects>
             <point key="canvasLocation" x="4940" y="684.10794602698661"/>
         </scene>
-        <!--RankTVC-->
+        <!--Ranks-->
         <scene sceneID="cmI-bN-Q4d">
             <objects>
                 <tableViewController id="98S-9l-73A" customClass="RankTVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -438,12 +440,13 @@
                             <outlet property="delegate" destination="98S-9l-73A" id="CA1-5B-cxw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Ranks" id="rnb-H2-bbb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHt-x7-Ihv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4886" y="-640"/>
         </scene>
-        <!--RoleTVC-->
+        <!--Roles-->
         <scene sceneID="fQt-ls-quT">
             <objects>
                 <tableViewController id="nzU-g7-fqN" customClass="RoleTVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -466,12 +469,13 @@
                             <outlet property="delegate" destination="nzU-g7-fqN" id="PdP-aq-6eK"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Roles" id="BST-M6-pfj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adn-tG-n4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4886" y="-1305"/>
         </scene>
-        <!--Second LevelTVC-->
+        <!--Conditions-->
         <scene sceneID="WPD-Fm-TFl">
             <objects>
                 <tableViewController id="nOk-OC-2xY" customClass="SecondLevelTVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -494,6 +498,7 @@
                             <outlet property="delegate" destination="nOk-OC-2xY" id="g1E-yx-jCf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Conditions" id="kp6-6C-NfJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTL-Nh-dPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
