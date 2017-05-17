@@ -12,13 +12,21 @@ class SecondLevelTVC: UITableViewController {
     
     let dc = DataController.sharedInstance
     
-    
+    //array to determine if the condition are selected
     var conditionArr : [Bool] = []
+    
+    // array to determine if the condition survey are selected
+    var selConditionsArr : [Bool] = []
+    
+    // identify which button was pressed
+    var segueIdentifier = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         conditionArr =  Array(repeating: false, count: dc.conditionCount )
+        selConditionsArr =  Array(repeating: false, count: 4)
+        print(segueIdentifier)
         
     }
     
@@ -65,7 +73,7 @@ class SecondLevelTVC: UITableViewController {
                 let condition = dc.getCondition(index: section - 1)
                 let conditionSurveys = dc.getConditionSurveys(condition: condition)
                 
-                let conditionSurvey = dc.getConditionSurvey(condition: conditionSurveys, index: row)
+                let conditionSurvey = dc.getConditionSurvey(conditionSurvey: conditionSurveys, index: row)
                 if let label = cell.textLabel{
                     label.text = conditionSurvey
                 }
@@ -88,13 +96,8 @@ class SecondLevelTVC: UITableViewController {
         // ensure
         
         let section = indexPath.section
-        if let cell = tableView.cellForRow(at: indexPath){
-            cell.accessoryType = .checkmark
-        }
         
         if (section == 0){
-            
-            
             
             tableView.allowsMultipleSelection = true
             
@@ -123,33 +126,39 @@ class SecondLevelTVC: UITableViewController {
             }
             tableView.reloadSections([1, 2, 3], with: .automatic)
             
-        }else {
-            
-            let wd = SecondLevelData(description: "sd")
-            
         }
         
-        //        if (airborne == false){
-        //
-        //            if(cell?.textLabel!.text == "Airborne"){
-        //                airborne = true
-        //            }
-        //
-        //        }
-        //        if (contact == false){
-        //            if(cell?.textLabel!.text == "Contact"){
-        //                contact = true
-        //            }
-        //        }
-        //        if (droplet == false){
-        //            if(cell?.textLabel!.text == "Droplet"){
-        //                droplet = true
-        //            }
-        //        }
+        // will set the selCondtionsArr to true or false, to determine whether its selected <--
         
+        if (section == 1){
+            
+            if(selConditionsArr[0] == false){
+                selConditionsArr[0] = true
+            }
+        }
         
-        
-        
+        if (section == 2){
+            let row = indexPath.row
+            
+            if (row == 0){
+                if (selConditionsArr[1] == false){
+                    selConditionsArr[1] = true
+                }
+            }else {
+                if (selConditionsArr[2] == false){
+                    selConditionsArr[2] = true
+                }
+            }
+            
+        }
+        if (section == 3){
+            
+            if(selConditionsArr[3] == false){
+                selConditionsArr[3] = true
+            }
+        }
+        // -->
+        print(selConditionsArr)
         
         
     }
@@ -159,9 +168,6 @@ class SecondLevelTVC: UITableViewController {
         tableView.allowsMultipleSelection = true
         let section = indexPath.section
         
-        if let cell = tableView.cellForRow(at: indexPath){
-            cell.accessoryType = .none
-        }
         
         if (section == 0){
             
@@ -190,22 +196,37 @@ class SecondLevelTVC: UITableViewController {
             }
             
             
-        }else{
+        }
+        // same concept as selecting the row, but now its deselecting. will set it to false
+        if (section == 1){
             
+            if(selConditionsArr[0] == true){
+                selConditionsArr[0] = false
+            }
         }
         
+        if (section == 2){
+            let row = indexPath.row
+            
+            if (row == 0){
+                if (selConditionsArr[1] == true){
+                    selConditionsArr[1] = false
+                }
+            }else {
+                if (selConditionsArr[2] == true){
+                    selConditionsArr[2] = false
+                }
+            }
+            
+        }
+        if (section == 3){
+            
+            if(selConditionsArr[3] == true){
+                selConditionsArr[3] = false
+            }
+        }
         
-        
-        
-        //        if(cell?.textLabel!.text == "Airborne"){
-        //            airborne = false
-        //        }
-        //        if(cell?.textLabel!.text == "Contact"){
-        //            contact = false
-        //        }
-        //        if(cell?.textLabel!.text == "Droplet"){
-        //            droplet = false
-        //        }
+        print(selConditionsArr)
         
         
     }
@@ -229,6 +250,51 @@ class SecondLevelTVC: UITableViewController {
         
     }
     
+    // make an alert, tapping OK will call addConditions
+    @IBAction func actDone(_ sender: UIBarButtonItem) {
+        
+        let title = "Confirm?"
+        
+        let message = "N95: \(selConditionsArr[0]) \n Glove: \(selConditionsArr[1]) \n Gown: \(selConditionsArr[2]) \n Mask: \(selConditionsArr[3])"
+        let alert = UIAlertController(title: title,
+                                      message: message, preferredStyle:UIAlertControllerStyle.alert)
+        
+        let defaultAction = UIAlertAction(title:"OK",
+                                          style: UIAlertActionStyle.default, handler: addConditions)
+        
+        let cancelAction = UIAlertAction(title:"Cancel",
+                                         style: UIAlertActionStyle.cancel, handler: cancelAct)
+        
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
+    
+    // add the array into the data controller's array, depending on which segue was called.
+    func addConditions (_ alert : UIAlertAction){
+        if (segueIdentifier == "sls1"){
+            dc.conditionSurvey1 = selConditionsArr
+        }else if (segueIdentifier == "sls2"){
+            dc.conditionSurvey2 = selConditionsArr
+        }else if (segueIdentifier == "sls3"){
+            dc.conditionSurvey3 = selConditionsArr
+        }else if (segueIdentifier == "sls4"){
+            dc.conditionSurvey4 = selConditionsArr
+        }else if (segueIdentifier == "sls5"){
+            dc.conditionSurvey5 = selConditionsArr
+        }
+        
+        if let vc = self.navigationController{
+            vc.popViewController(animated: true)
+        }
+    }
+    
+    func cancelAct (_ alert : UIAlertAction){
+        
+    }
+
+
     
 }

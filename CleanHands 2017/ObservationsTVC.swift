@@ -48,8 +48,26 @@ class ObservationsTVC: UITableViewController {
 
     // saving records as a single object to records class
     @IBAction func actSaveRecords(_ sender: Any) {
-        let record = Records(role: outRank.text!, rank: outRank.text!, label1: outRank.text!)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "sls1"){
+            let sls = segue.destination as! SecondLevelTVC
+            sls.segueIdentifier = "sls1"
+        }else if(segue.identifier == "sls2"){
+            let sls = segue.destination as! SecondLevelTVC
+            sls.segueIdentifier = "sls2"
+        }else if(segue.identifier == "sls3"){
+            let sls1 = segue.destination as! SecondLevelTVC
+            sls1.segueIdentifier = "sls3"
+        }else if(segue.identifier == "sls4"){
+            let sls1 = segue.destination as! SecondLevelTVC
+            sls1.segueIdentifier = "sls4"
+        }else if(segue.identifier == "sls5"){
+            let sls1 = segue.destination as! SecondLevelTVC
+            sls1.segueIdentifier = "sls5"
+        }
     }
     
 

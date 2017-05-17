@@ -28,9 +28,6 @@ class DataController {
     // location array
     var locations : [String] = ["A", "B", "C"]
     
-    // checkbox array
-    var checkbox : [String] = []
-    
     //get single location
     func getLocation(index:Int) -> String {
         return locations[index]
@@ -39,11 +36,6 @@ class DataController {
     // gets the number of locations
     var locationsCount : Int {
         return locations.count
-    }
-    
-    // gets the number of checkboxes
-    var checkboxCount : Int {
-        return checkbox.count
     }
     
     //roleAndrank dictionary
@@ -79,6 +71,7 @@ class DataController {
     
     
     //second level survey dictionary
+    // condition : conditionSurvey
     var conditions : [String : [SecondLevelData]]
     
     
@@ -99,8 +92,8 @@ class DataController {
     }
     
     // delete this, replace with condition[row]
-    func getConditionSurvey(condition : [String], index : Int) -> String {
-        return condition[index]
+    func getConditionSurvey(conditionSurvey : [String], index : Int) -> String {
+        return conditionSurvey[index]
     }
     
     func conditionSurveyCount (type : String) -> Int{
@@ -118,6 +111,14 @@ class DataController {
     // saving the title and notes
     var notesTitle : String = ""
     var notesText : String = ""
+    
+    //saving the array of boolean of condition survey
+    //5 arrays for each of the observation point
+    var conditionSurvey1 : [Bool] = []
+    var conditionSurvey2 : [Bool] = []
+    var conditionSurvey3 : [Bool] = []
+    var conditionSurvey4 : [Bool] = []
+    var conditionSurvey5 : [Bool] = []
     
     
     

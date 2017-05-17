@@ -507,7 +507,13 @@
                             <outlet property="delegate" destination="nOk-OC-2xY" id="g1E-yx-jCf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Conditions" id="kp6-6C-NfJ"/>
+                    <navigationItem key="navigationItem" title="Conditions" id="kp6-6C-NfJ">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="b1Q-MO-obB">
+                            <connections>
+                                <action selector="actDone:" destination="nOk-OC-2xY" id="FTJ-j4-oYW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTL-Nh-dPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
