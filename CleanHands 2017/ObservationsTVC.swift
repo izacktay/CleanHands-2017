@@ -14,15 +14,19 @@ class ObservationsTVC: UITableViewController {
 
     @IBOutlet weak var outRole: UILabel!
     @IBOutlet weak var outRank: UILabel!
+    
+    //saving the array of boolean of condition survey
+    //5 arrays for each of the observation point
+    var conditionSurvey1 : [Bool] = []
+    var conditionSurvey2 : [Bool] = []
+    var conditionSurvey3 : [Bool] = []
+    var conditionSurvey4 : [Bool] = []
+    var conditionSurvey5 : [Bool] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

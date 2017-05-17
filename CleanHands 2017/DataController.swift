@@ -112,13 +112,7 @@ class DataController {
     var notesTitle : String = ""
     var notesText : String = ""
     
-    //saving the array of boolean of condition survey
-    //5 arrays for each of the observation point
-    var conditionSurvey1 : [Bool] = []
-    var conditionSurvey2 : [Bool] = []
-    var conditionSurvey3 : [Bool] = []
-    var conditionSurvey4 : [Bool] = []
-    var conditionSurvey5 : [Bool] = []
+
     
     
     

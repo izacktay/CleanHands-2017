@@ -274,21 +274,25 @@ class SecondLevelTVC: UITableViewController {
     
     // add the array into the data controller's array, depending on which segue was called.
     func addConditions (_ alert : UIAlertAction){
+        
+        let oTVC = ObservationsTVC()
         if (segueIdentifier == "sls1"){
-            dc.conditionSurvey1 = selConditionsArr
+            oTVC.conditionSurvey1 = selConditionsArr
         }else if (segueIdentifier == "sls2"){
-            dc.conditionSurvey2 = selConditionsArr
+            oTVC.conditionSurvey2 = selConditionsArr
         }else if (segueIdentifier == "sls3"){
-            dc.conditionSurvey3 = selConditionsArr
+            oTVC.conditionSurvey3 = selConditionsArr
         }else if (segueIdentifier == "sls4"){
-            dc.conditionSurvey4 = selConditionsArr
+            oTVC.conditionSurvey4 = selConditionsArr
         }else if (segueIdentifier == "sls5"){
-            dc.conditionSurvey5 = selConditionsArr
+            oTVC.conditionSurvey5 = selConditionsArr
         }
         
         if let vc = self.navigationController{
             vc.popViewController(animated: true)
         }
+        
+        
     }
     
     func cancelAct (_ alert : UIAlertAction){
