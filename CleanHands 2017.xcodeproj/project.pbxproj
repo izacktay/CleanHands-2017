@@ -23,6 +23,7 @@
 		847891531EB4B75D00BC09C5 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847891521EB4B75D00BC09C5 /* Records.swift */; };
 		849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */; };
 		84C57E5D1EB7449800B53470 /* SecondLevelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C57E5C1EB7449800B53470 /* SecondLevelTVC.swift */; };
+		DF655F881ECC0D9B007CC873 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF655F871ECC0D9B007CC873 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		847891521EB4B75D00BC09C5 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		84C57E5C1EB7449800B53470 /* SecondLevelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLevelTVC.swift; sourceTree = "<group>"; };
+		DF655F871ECC0D9B007CC873 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF655F881ECC0D9B007CC873 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 			children = (
 				84092AEF1EB0571A00ABAED7 /* CleanHands 2017 */,
 				84092AEE1EB0571A00ABAED7 /* Products */,
+				DF655F861ECC0D9B007CC873 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +99,14 @@
 				844454251EC17FCC00506083 /* NotesVC.swift */,
 			);
 			path = "CleanHands 2017";
+			sourceTree = "<group>";
+		};
+		DF655F861ECC0D9B007CC873 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF655F871ECC0D9B007CC873 /* MessageUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
