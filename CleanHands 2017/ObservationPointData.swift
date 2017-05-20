@@ -11,5 +11,12 @@ import Foundation
 public class ObservationPointData {
     
     var notes : String = ""
+    var actions : String = ""
+    var conditions : [Bool] = []
     
+    init (notes : String, actions : String, conditions : [Bool]){
+        self.notes = notes
+        self.actions = actions
+        self.conditions = conditions
+    }
 }

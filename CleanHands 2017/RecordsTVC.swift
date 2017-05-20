@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObservationsTVC: UITableViewController {
+class RecordsTVC: UITableViewController {
     
     let dc = DataController.sharedInstance
 
@@ -17,11 +17,13 @@ class ObservationsTVC: UITableViewController {
     
     //saving the array of boolean of condition survey
     //5 arrays for each of the observation point
-    var conditionSurvey1 : [Bool] = []
-    var conditionSurvey2 : [Bool] = []
-    var conditionSurvey3 : [Bool] = []
-    var conditionSurvey4 : [Bool] = []
-    var conditionSurvey5 : [Bool] = []
+//    var conditionSurvey1 : [Bool] = []
+//    var conditionSurvey2 : [Bool] = []
+//    var conditionSurvey3 : [Bool] = []
+//    var conditionSurvey4 : [Bool] = []
+//    var conditionSurvey5 : [Bool] = []
+    
+    var conditionSurvey : [[Bool]] = [[], [], [], [], []]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,25 +53,28 @@ class ObservationsTVC: UITableViewController {
     }
 
     // saving records as a single object to records class
-    @IBAction func actSaveRecords(_ sender: Any) {
+    
+    @IBAction func actSaveRecord(_ sender: UIBarButtonItem) {
+        
+        
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "sls1"){
-            let sls = segue.destination as! SecondLevelTVC
+            let sls = segue.destination as! ConditionsTVC
             sls.segueIdentifier = "sls1"
         }else if(segue.identifier == "sls2"){
-            let sls = segue.destination as! SecondLevelTVC
+            let sls = segue.destination as! ConditionsTVC
             sls.segueIdentifier = "sls2"
         }else if(segue.identifier == "sls3"){
-            let sls1 = segue.destination as! SecondLevelTVC
+            let sls1 = segue.destination as! ConditionsTVC
             sls1.segueIdentifier = "sls3"
         }else if(segue.identifier == "sls4"){
-            let sls1 = segue.destination as! SecondLevelTVC
+            let sls1 = segue.destination as! ConditionsTVC
             sls1.segueIdentifier = "sls4"
         }else if(segue.identifier == "sls5"){
-            let sls1 = segue.destination as! SecondLevelTVC
+            let sls1 = segue.destination as! ConditionsTVC
             sls1.segueIdentifier = "sls5"
         }
     }

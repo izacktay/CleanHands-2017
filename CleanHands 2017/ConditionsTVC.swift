@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondLevelTVC: UITableViewController {
+class ConditionsTVC: UITableViewController {
     
     let dc = DataController.sharedInstance
     
@@ -200,6 +200,8 @@ class SecondLevelTVC: UITableViewController {
         // same concept as selecting the row, but now its deselecting. will set it to false
         if (section == 1){
             
+            //
+            
             if(selConditionsArr[0] == true){
                 selConditionsArr[0] = false
             }
@@ -275,17 +277,30 @@ class SecondLevelTVC: UITableViewController {
     // add the array into the data controller's array, depending on which segue was called.
     func addConditions (_ alert : UIAlertAction){
         
-        let oTVC = ObservationsTVC()
+        let rTVC = RecordsTVC()
+//        if (segueIdentifier == "sls1"){
+//            oTVC.conditionSurvey1 = selConditionsArr
+//        }else if (segueIdentifier == "sls2"){
+//            oTVC.conditionSurvey2 = selConditionsArr
+//        }else if (segueIdentifier == "sls3"){
+//            oTVC.conditionSurvey3 = selConditionsArr
+//        }else if (segueIdentifier == "sls4"){
+//            oTVC.conditionSurvey4 = selConditionsArr
+//        }else if (segueIdentifier == "sls5"){
+//            oTVC.conditionSurvey5 = selConditionsArr
+//        }
+        
+        // assign the selCondtionsArr to the BooleanArr array list in ObservationsTVC
         if (segueIdentifier == "sls1"){
-            oTVC.conditionSurvey1 = selConditionsArr
+            rTVC.conditionSurvey[0] = selConditionsArr
         }else if (segueIdentifier == "sls2"){
-            oTVC.conditionSurvey2 = selConditionsArr
+            rTVC.conditionSurvey[1] = selConditionsArr
         }else if (segueIdentifier == "sls3"){
-            oTVC.conditionSurvey3 = selConditionsArr
+            rTVC.conditionSurvey[2] = selConditionsArr
         }else if (segueIdentifier == "sls4"){
-            oTVC.conditionSurvey4 = selConditionsArr
+            rTVC.conditionSurvey[3] = selConditionsArr
         }else if (segueIdentifier == "sls5"){
-            oTVC.conditionSurvey5 = selConditionsArr
+            rTVC.conditionSurvey[4] = selConditionsArr
         }
         
         if let vc = self.navigationController{

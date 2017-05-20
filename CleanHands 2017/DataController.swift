@@ -13,10 +13,10 @@ class DataController {
     // private init prevents external creation
     private init() {
         
-        let glove = SecondLevelData(description: "Glove")
-        let n95 = SecondLevelData(description: "N95")
-        let gown = SecondLevelData(description: "Gown")
-        let mask = SecondLevelData(description: "Mask")
+        let glove = ConditionsData(condition: "Glove")
+        let n95 = ConditionsData(condition: "N95")
+        let gown = ConditionsData(condition: "Gown")
+        let mask = ConditionsData(condition: "Mask")
         
         conditions = ["Airborne" : [n95], "Contact" : [glove, gown], "Droplet" : [mask]]
         
@@ -72,7 +72,7 @@ class DataController {
     
     //second level survey dictionary
     // condition : conditionSurvey
-    var conditions : [String : [SecondLevelData]]
+    var conditions : [String : [ConditionsData]]
     
     
     //get the name of the condition
@@ -85,7 +85,7 @@ class DataController {
         var stringArr : [String] = []
         if let array = conditions[condition]{
             for data in array {
-                stringArr.append(data.description)
+                stringArr.append(data.condition)
             }
         }
         return stringArr
@@ -112,6 +112,13 @@ class DataController {
     var notesTitle : String = ""
     var notesText : String = ""
     
+    
+    // observation tvc
+    var recordArr : [RecordData] = []
+    
+    
+    //which will
+    var observationArr : [ConditionsData] = []
 
     
     

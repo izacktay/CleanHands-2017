@@ -13,16 +13,16 @@
 		84092AFB1EB0571A00ABAED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */; };
 		84092B031EB0578000ABAED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B021EB0578000ABAED7 /* MainViewController.swift */; };
 		84092B051EB0579000ABAED7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B041EB0579000ABAED7 /* DataController.swift */; };
-		84092B2B1EB0CF0A00ABAED7 /* ObservationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2A1EB0CF0A00ABAED7 /* ObservationsTVC.swift */; };
+		84092B2B1EB0CF0A00ABAED7 /* RecordsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */; };
 		84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */; };
-		841E54951EC06F9B0072F776 /* SecondLevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54941EC06F9B0072F776 /* SecondLevelData.swift */; };
+		841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54941EC06F9B0072F776 /* ConditionsData.swift */; };
 		841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54961EC07C370072F776 /* ObservationPointData.swift */; };
 		844454261EC17FCC00506083 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844454251EC17FCC00506083 /* NotesVC.swift */; };
 		8451655C1EB4489500A72524 /* RoleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451655B1EB4489500A72524 /* RoleTVC.swift */; };
 		845165661EB46D0900A72524 /* RankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845165651EB46D0900A72524 /* RankTVC.swift */; };
-		847891531EB4B75D00BC09C5 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847891521EB4B75D00BC09C5 /* Records.swift */; };
+		847891531EB4B75D00BC09C5 /* RecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847891521EB4B75D00BC09C5 /* RecordData.swift */; };
 		849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */; };
-		84C57E5D1EB7449800B53470 /* SecondLevelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C57E5C1EB7449800B53470 /* SecondLevelTVC.swift */; };
+		84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C57E5C1EB7449800B53470 /* ConditionsTVC.swift */; };
 		DF655F881ECC0D9B007CC873 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF655F871ECC0D9B007CC873 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,16 +35,16 @@
 		84092AFC1EB0571A00ABAED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84092B021EB0578000ABAED7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84092B041EB0579000ABAED7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		84092B2A1EB0CF0A00ABAED7 /* ObservationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationsTVC.swift; sourceTree = "<group>"; };
+		84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTVC.swift; sourceTree = "<group>"; };
 		84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
-		841E54941EC06F9B0072F776 /* SecondLevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLevelData.swift; sourceTree = "<group>"; };
+		841E54941EC06F9B0072F776 /* ConditionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsData.swift; sourceTree = "<group>"; };
 		841E54961EC07C370072F776 /* ObservationPointData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationPointData.swift; sourceTree = "<group>"; };
 		844454251EC17FCC00506083 /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		8451655B1EB4489500A72524 /* RoleTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleTVC.swift; sourceTree = "<group>"; };
 		845165651EB46D0900A72524 /* RankTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTVC.swift; sourceTree = "<group>"; };
-		847891521EB4B75D00BC09C5 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		847891521EB4B75D00BC09C5 /* RecordData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 		849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		84C57E5C1EB7449800B53470 /* SecondLevelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLevelTVC.swift; sourceTree = "<group>"; };
+		84C57E5C1EB7449800B53470 /* ConditionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsTVC.swift; sourceTree = "<group>"; };
 		DF655F871ECC0D9B007CC873 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840723231ED048470088362A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				844454251EC17FCC00506083 /* NotesVC.swift */,
+				84C57E5C1EB7449800B53470 /* ConditionsTVC.swift */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		84092AE41EB0571A00ABAED7 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +89,7 @@
 		84092AEF1EB0571A00ABAED7 /* CleanHands 2017 */ = {
 			isa = PBXGroup;
 			children = (
+				840723231ED048470088362A /* New Group */,
 				84092AF01EB0571A00ABAED7 /* AppDelegate.swift */,
 				84092AF41EB0571A00ABAED7 /* Main.storyboard */,
 				84092AF71EB0571A00ABAED7 /* Assets.xcassets */,
@@ -87,16 +97,14 @@
 				84092AFC1EB0571A00ABAED7 /* Info.plist */,
 				84092B021EB0578000ABAED7 /* MainViewController.swift */,
 				84092B041EB0579000ABAED7 /* DataController.swift */,
-				84092B2A1EB0CF0A00ABAED7 /* ObservationsTVC.swift */,
+				84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */,
 				84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */,
 				8451655B1EB4489500A72524 /* RoleTVC.swift */,
 				845165651EB46D0900A72524 /* RankTVC.swift */,
-				84C57E5C1EB7449800B53470 /* SecondLevelTVC.swift */,
-				847891521EB4B75D00BC09C5 /* Records.swift */,
+				847891521EB4B75D00BC09C5 /* RecordData.swift */,
 				849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */,
-				841E54941EC06F9B0072F776 /* SecondLevelData.swift */,
+				841E54941EC06F9B0072F776 /* ConditionsData.swift */,
 				841E54961EC07C370072F776 /* ObservationPointData.swift */,
-				844454251EC17FCC00506083 /* NotesVC.swift */,
 			);
 			path = "CleanHands 2017";
 			sourceTree = "<group>";
@@ -182,16 +190,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84092B2B1EB0CF0A00ABAED7 /* ObservationsTVC.swift in Sources */,
+				84092B2B1EB0CF0A00ABAED7 /* RecordsTVC.swift in Sources */,
 				84092B051EB0579000ABAED7 /* DataController.swift in Sources */,
 				844454261EC17FCC00506083 /* NotesVC.swift in Sources */,
 				84092B031EB0578000ABAED7 /* MainViewController.swift in Sources */,
-				847891531EB4B75D00BC09C5 /* Records.swift in Sources */,
+				847891531EB4B75D00BC09C5 /* RecordData.swift in Sources */,
 				84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */,
 				841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */,
-				84C57E5D1EB7449800B53470 /* SecondLevelTVC.swift in Sources */,
+				84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */,
 				845165661EB46D0900A72524 /* RankTVC.swift in Sources */,
-				841E54951EC06F9B0072F776 /* SecondLevelData.swift in Sources */,
+				841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */,
 				84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */,
 				8451655C1EB4489500A72524 /* RoleTVC.swift in Sources */,
 				849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */,
