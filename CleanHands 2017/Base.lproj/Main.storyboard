@@ -121,7 +121,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VCb-zJ-MEY">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="VCb-zJ-MEY">
                                                     <rect key="frame" x="63" y="7" width="207" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -131,11 +131,11 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-JZ-gag">
-                                                    <rect key="frame" x="273" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="276" y="6" width="41" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Notes"/>
                                                     <connections>
-                                                        <segue destination="7Ko-dH-AeC" kind="show" id="0OS-GA-Ya3"/>
+                                                        <segue destination="7Ko-dH-AeC" kind="show" identifier="notes1" id="0OS-GA-Ya3"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-Jn-fs5">
@@ -163,7 +163,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JTf-WN-cZD">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="JTf-WN-cZD">
                                                     <rect key="frame" x="61" y="5" width="207" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -173,9 +173,12 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi8-UL-pm0">
-                                                    <rect key="frame" x="273" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="276" y="6" width="41" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Notes"/>
+                                                    <connections>
+                                                        <segue destination="7Ko-dH-AeC" kind="show" identifier="notes2" id="3kh-Ct-AxW"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfc-us-D6h">
                                                     <rect key="frame" x="321" y="6" width="46" height="30"/>
@@ -202,7 +205,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pJB-8q-GgX">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="pJB-8q-GgX">
                                                     <rect key="frame" x="61" y="5" width="207" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -212,9 +215,12 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JF-is-a3X">
-                                                    <rect key="frame" x="273" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="276" y="6" width="41" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Notes"/>
+                                                    <connections>
+                                                        <segue destination="7Ko-dH-AeC" kind="show" identifier="notes3" id="wjq-Bk-Ohg"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5b-JT-7TM">
                                                     <rect key="frame" x="321" y="6" width="46" height="30"/>
@@ -241,7 +247,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-MW-t7r">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-MW-t7r">
                                                     <rect key="frame" x="61" y="6" width="207" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -251,9 +257,12 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-jp-DTb">
-                                                    <rect key="frame" x="273" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="276" y="6" width="41" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Notes"/>
+                                                    <connections>
+                                                        <segue destination="7Ko-dH-AeC" kind="show" identifier="notes4" id="BRk-rO-JzI"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkf-Ko-jpy">
                                                     <rect key="frame" x="321" y="6" width="46" height="30"/>
@@ -280,7 +289,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-ji-mZm">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-ji-mZm">
                                                     <rect key="frame" x="61" y="7" width="207" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -290,9 +299,12 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-fi-Sc3">
-                                                    <rect key="frame" x="273" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="276" y="6" width="41" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Notes"/>
+                                                    <connections>
+                                                        <segue destination="7Ko-dH-AeC" kind="show" identifier="notes5" id="9lx-13-gcw"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpw-7p-4l3">
                                                     <rect key="frame" x="321" y="6" width="46" height="30"/>
@@ -320,12 +332,21 @@
                                     <action selector="actSaveRecord:" destination="UUe-Wk-5jE" id="hNm-S8-W94"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Settings" id="6ot-TM-EGd"/>
+                            <barButtonItem title="Settings" id="6ot-TM-EGd">
+                                <connections>
+                                    <segue destination="mPF-qS-wg5" kind="show" id="GLy-Dy-vYX"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="outRank" destination="92t-ch-yJQ" id="cPf-Ep-pma"/>
                         <outlet property="outRole" destination="ZWa-GN-OFc" id="gaM-rq-5ig"/>
+                        <outlet property="segAction1" destination="VCb-zJ-MEY" id="2Gt-IP-poL"/>
+                        <outlet property="segAction2" destination="JTf-WN-cZD" id="e3s-Ok-rdV"/>
+                        <outlet property="segAction3" destination="pJB-8q-GgX" id="kfL-KA-cp1"/>
+                        <outlet property="segAction4" destination="xjJ-MW-t7r" id="sZ5-0a-rzs"/>
+                        <outlet property="segAction5" destination="wZc-ji-mZm" id="cug-uQ-3Se"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDC-jF-MK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="4886" y="9"/>
         </scene>
-        <!--NotesVC-->
+        <!--Notes-->
         <scene sceneID="bLI-wu-W51">
             <objects>
                 <viewController id="7Ko-dH-AeC" customClass="NotesVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,15 +404,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8O5-HU-5U8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="8ZA-bw-AMo">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="ywq-6b-CR8"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xl6-2y-6Nt">
                                 <rect key="frame" x="85" y="91" width="274" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -416,6 +428,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Notes" id="Muh-bk-6VJ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="bc3-O2-qik">
+                            <connections>
+                                <action selector="actSave:" destination="7Ko-dH-AeC" id="oJj-Ec-SuB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="outTFTitle" destination="xl6-2y-6Nt" id="gz0-sl-at6"/>
                         <outlet property="outTVNotes" destination="sNd-rw-sbc" id="0Bb-XL-1hh"/>
@@ -538,6 +557,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Iv-yc-qmo"/>
+        <segue reference="0OS-GA-Ya3"/>
+        <segue reference="ig0-P7-8rv"/>
     </inferredMetricsTieBreakers>
 </document>

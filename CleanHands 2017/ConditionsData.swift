@@ -15,12 +15,14 @@ public class ConditionsData {
     // for the conditions
     // 
     
-    var condition : String
-    var conditionSurvey : Bool = false
+    var description : String
+    var selected : Bool = false
     
     
-    init(condition : String){
-        self.condition = condition
+    init(description : String){
+        self.description = description
     }
+    
+    
     
 }

@@ -17,16 +17,20 @@ class ConditionsTVC: UITableViewController {
     
     // array to determine if the condition survey are selected
     var selConditionsArr : [Bool] = []
+    var condData = ConditionsData(description: "")
+    var selCondArr : [ConditionsData] = []
     
     // identify which button was pressed
     var segueIdentifier = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         conditionArr =  Array(repeating: false, count: dc.conditionCount )
         selConditionsArr =  Array(repeating: false, count: 4)
+        selCondArr = Array(repeating: condData, count: 4)
         print(segueIdentifier)
+        
+        
         
     }
     
@@ -134,6 +138,8 @@ class ConditionsTVC: UITableViewController {
             
             if(selConditionsArr[0] == false){
                 selConditionsArr[0] = true
+                dc.n95.selected = true
+                selCondArr[0] = dc.n95
             }
         }
         
@@ -143,10 +149,14 @@ class ConditionsTVC: UITableViewController {
             if (row == 0){
                 if (selConditionsArr[1] == false){
                     selConditionsArr[1] = true
+                    dc.glove.selected = true
+                    selCondArr[1] = dc.glove
                 }
             }else {
                 if (selConditionsArr[2] == false){
                     selConditionsArr[2] = true
+                    dc.gown.selected = true
+                    selCondArr[2] = dc.gown
                 }
             }
             
@@ -155,6 +165,8 @@ class ConditionsTVC: UITableViewController {
             
             if(selConditionsArr[3] == false){
                 selConditionsArr[3] = true
+                dc.mask .selected = true
+                selCondArr[3] = dc.mask
             }
         }
         // -->
@@ -278,29 +290,17 @@ class ConditionsTVC: UITableViewController {
     func addConditions (_ alert : UIAlertAction){
         
         let rTVC = RecordsTVC()
-//        if (segueIdentifier == "sls1"){
-//            oTVC.conditionSurvey1 = selConditionsArr
-//        }else if (segueIdentifier == "sls2"){
-//            oTVC.conditionSurvey2 = selConditionsArr
-//        }else if (segueIdentifier == "sls3"){
-//            oTVC.conditionSurvey3 = selConditionsArr
-//        }else if (segueIdentifier == "sls4"){
-//            oTVC.conditionSurvey4 = selConditionsArr
-//        }else if (segueIdentifier == "sls5"){
-//            oTVC.conditionSurvey5 = selConditionsArr
-//        }
-        
         // assign the selCondtionsArr to the BooleanArr array list in ObservationsTVC
         if (segueIdentifier == "sls1"){
-            rTVC.conditionSurvey[0] = selConditionsArr
+            rTVC.condition1 = selCondArr
         }else if (segueIdentifier == "sls2"){
-            rTVC.conditionSurvey[1] = selConditionsArr
+            rTVC.condition2 = selCondArr
         }else if (segueIdentifier == "sls3"){
-            rTVC.conditionSurvey[2] = selConditionsArr
+            rTVC.condition3 = selCondArr
         }else if (segueIdentifier == "sls4"){
-            rTVC.conditionSurvey[3] = selConditionsArr
+            rTVC.condition4 = selCondArr
         }else if (segueIdentifier == "sls5"){
-            rTVC.conditionSurvey[4] = selConditionsArr
+            rTVC.condition5 = selCondArr
         }
         
         if let vc = self.navigationController{

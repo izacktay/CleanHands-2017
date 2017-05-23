@@ -11,18 +11,20 @@ import UIKit
 class NotesVC: UIViewController {
     
     let dc = DataController.sharedInstance
-
+    
     @IBOutlet weak var outTFTitle: UITextField!
     @IBOutlet weak var outTVNotes: UITextView!
+    
+    var segueIdentifier = ""
     
     let myDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        outTVNotes.layer.borderWidth = 1
+        outTVNotes.layer.cornerRadius = 2
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,17 +47,28 @@ class NotesVC: UIViewController {
         
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actSave(_ sender: UIBarButtonItem) {
+        
+        let rTVC = RecordsTVC()
+        
+        if (segueIdentifier == "notes1"){
+            rTVC.notes1 = outTVNotes.text!
+        }else if (segueIdentifier == "notes2"){
+            rTVC.notes2 = outTVNotes.text!
+        }else if (segueIdentifier == "notes3"){
+            rTVC.notes3 = outTVNotes.text!
+        }else if (segueIdentifier == "notes4"){
+            rTVC.notes4 = outTVNotes.text!
+        }else if (segueIdentifier == "notes5"){
+            rTVC.notes5 = outTVNotes.text!
+        }
+        
+        if let vc = self.navigationController{
+            vc.popViewController(animated: true)
+        }
+        
     }
-    */
-
+    
+    
+    
 }

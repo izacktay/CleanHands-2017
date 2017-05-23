@@ -11,12 +11,14 @@ class DataController {
     // the singleton object
     static let sharedInstance = DataController()
     // private init prevents external creation
+    
+    let glove = ConditionsData(description: "Glove")
+    let n95 = ConditionsData(description: "N95")
+    let gown = ConditionsData(description: "Gown")
+    let mask = ConditionsData(description: "Mask")
+    
     private init() {
         
-        let glove = ConditionsData(condition: "Glove")
-        let n95 = ConditionsData(condition: "N95")
-        let gown = ConditionsData(condition: "Gown")
-        let mask = ConditionsData(condition: "Mask")
         
         conditions = ["Airborne" : [n95], "Contact" : [glove, gown], "Droplet" : [mask]]
         
@@ -85,7 +87,7 @@ class DataController {
         var stringArr : [String] = []
         if let array = conditions[condition]{
             for data in array {
-                stringArr.append(data.condition)
+                stringArr.append(data.description)
             }
         }
         return stringArr
