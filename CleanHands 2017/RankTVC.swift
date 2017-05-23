@@ -57,7 +57,7 @@ class RankTVC: UITableViewController {
         let role = dc.role
         let ranks = dc.getRanks(role: role)
         
-        let rank = dc.getRank(role: ranks, index: row)
+        let rank = dc.getRank(rank: ranks, index: row)
         if let label = cell.textLabel{
             label.text = rank
         }
@@ -74,7 +74,7 @@ class RankTVC: UITableViewController {
         
         let role = dc.role
         let ranks = dc.getRanks(role: role)
-        dc.rank = dc.getRank(role: ranks, index: row)
+        dc.rank = dc.getRank(rank: ranks, index: row)
         
         if let nc = self.navigationController{
             nc.popViewController(animated: true)

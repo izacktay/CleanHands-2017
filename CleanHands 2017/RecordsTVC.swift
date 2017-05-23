@@ -71,17 +71,35 @@ class RecordsTVC: UITableViewController {
         
         
         // get the title of the segments
-        var  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
-        var  action2 : String = segAction2.titleForSegment(at: segAction1.selectedSegmentIndex)!
-        var  action3 : String = segAction3.titleForSegment(at: segAction1.selectedSegmentIndex)!
-        var  action4 : String = segAction4.titleForSegment(at: segAction1.selectedSegmentIndex)!
-        var  action5 : String = segAction5.titleForSegment(at: segAction1.selectedSegmentIndex)!
+        let  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
+        let  action2 : String = segAction2.titleForSegment(at: segAction2.selectedSegmentIndex)!
+        let  action3 : String = segAction3.titleForSegment(at: segAction3.selectedSegmentIndex)!
+        let  action4 : String = segAction4.titleForSegment(at: segAction4.selectedSegmentIndex)!
+        let  action5 : String = segAction5.titleForSegment(at: segAction5.selectedSegmentIndex)!
         
         
         //saving
         opData1.actions = action1
         opData1.notes = notes1
         opData1.conditions = condition1
+        
+        opData2.actions = action2
+        opData2.notes = notes2
+        opData2.conditions = condition2
+        
+        opData3.actions = action3
+        opData3.notes = notes3
+        opData3.conditions = condition3
+        
+        opData4.actions = action4
+        opData4.notes = notes4
+        opData4.conditions = condition4
+        
+        opData5.actions = action5
+        opData5.notes = notes5
+        opData5.conditions = condition5
+        
+        
         
     }
     

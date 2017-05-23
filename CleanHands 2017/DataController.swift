@@ -58,8 +58,8 @@ class DataController {
     }
     
     //get single rank
-    func getRank(role: [String], index:Int) -> String {
-        return role[index]
+    func getRank(rank: [String], index:Int) -> String {
+        return rank[index]
     }
     
     // gets the number of roles to update the table
