@@ -116,11 +116,43 @@ class DataController {
     
     
     // observation tvc
-    var recordArr : [RecordData] = []
+    
     
     
     //which will
-    var observationArr : [ConditionsData] = []
+    var observationArr : [ObservationPointData] = []
+    
+    //record
+    let record1 = RecordData()
+    let recordArr = [RecordData]()
+    
+    
+    // create csv
+    
+    // MARK: CSV file creating
+    func creatCSV() -> Void {
+        
+        record1.location = "A"
+        record1.role = role
+        record1.rank = rank
+        
+        let fileName = "Tasks.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        var csvText = "Date,Task Name,Time Started,Time Ended\n"
+        
+        for record in recordArr {
+            let newLine = "\(record.location),\(record.role),\(record.rank)\n"
+            csvText.append(newLine)
+        }
+        
+        do {
+            try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Failed to create file")
+            print("\(error)")
+        }
+        print(path ?? "not found")
+    }
 
     
     
