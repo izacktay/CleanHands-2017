@@ -99,7 +99,13 @@ class RecordsTVC: UITableViewController {
         opData5.notes = notes5
         opData5.conditions = condition5
         
+        dc.observationArr.append(opData1)
+        dc.observationArr.append(opData2)
+        dc.observationArr.append(opData3)
+        dc.observationArr.append(opData4)
+        dc.observationArr.append(opData5)
         
+        dc.creatCSV()
         
     }
     
