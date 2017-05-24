@@ -64,8 +64,7 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         //count is a computed var that counts the number of location
         return dc.locationsCount
     }
-
-    
+ 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
 
