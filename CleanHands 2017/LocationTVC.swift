@@ -20,6 +20,8 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         if !MFMailComposeViewController.canSendMail() {
             print("Mail service not available")
             return
+            
+            
         }
         
         
@@ -84,10 +86,26 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         composeVC.setToRecipients(["15017612@myrp.edu.sg"])
         composeVC.setSubject("'Sup")
         composeVC.setMessageBody("Testing", isHTML: false)
+        
+        if let filePath = Bundle.main.path(forResource: "swifts", ofType: "wav") {
+            print("File path loaded.")
+            
+            if let fileData = NSData(contentsOfFile: filePath) {
+                print("File data loaded.")
+                composeVC.addAttachmentData(fileData as Data, mimeType: "audio/wav", fileName: "swifts")
+            }
+        }
         self.present(composeVC, animated: true, completion: nil)
-        
-        
     }
+}
+
+        //composeVC.addAttachmentData(Data, mimeType: String, fileName: String)
+        
+
+        
+        
+
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -134,4 +152,4 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     }
     */
 
-}
+
