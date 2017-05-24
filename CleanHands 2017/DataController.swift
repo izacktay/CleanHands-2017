@@ -124,7 +124,7 @@ class DataController {
     
     //record
     let record1 = RecordData()
-    let recordArr = [RecordData]()
+    var recordArr = [RecordData]()
     
     
     // create csv
@@ -135,9 +135,11 @@ class DataController {
         record1.location = "A"
         record1.role = role
         record1.rank = rank
+        recordArr.append(record1)
+        print("hi")
         
-        let fileName = "Tasks.csv"
-        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        let fileName = "records.csv"
+        let path = NSURL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(fileName)
         var csvText = "Date,Task Name,Time Started,Time Ended\n"
         
         for record in recordArr {
