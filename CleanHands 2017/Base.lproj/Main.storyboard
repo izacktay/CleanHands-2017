@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gz0-2X-VPn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gz0-2X-VPn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -549,8 +549,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ranks" id="rnb-H2-bbb"/>
+                    <connections>
+                        <segue destination="hPB-qv-I7T" kind="unwind" identifier="fromRank" unwindAction="unwindFromRank:" id="d3h-ad-978"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHt-x7-Ihv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hPB-qv-I7T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4886" y="-640"/>
         </scene>
@@ -578,8 +582,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Roles" id="BST-M6-pfj"/>
+                    <connections>
+                        <segue destination="sBG-UJ-bCS" kind="unwind" identifier="fromRole" unwindAction="unwindFromRole:" id="PKW-kI-P6Z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adn-tG-n4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sBG-UJ-bCS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4886" y="-1305"/>
         </scene>

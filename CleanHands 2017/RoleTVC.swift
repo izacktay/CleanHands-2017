@@ -9,109 +9,146 @@
 import UIKit
 
 class RoleTVC: UITableViewController {
+  
+  let dc = DataController.sharedInstance
+  
+  //MARK: Archiving Paths
+  static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+  
+  static let aURLRoles = DocumentsDirectory.appendingPathComponent("roles")
+  static let aURLoutRole = DocumentsDirectory.appendingPathComponent("outRole")
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    navigationItem.rightBarButtonItem = editButtonItem
     
-    let dc = DataController.sharedInstance
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    // Load any saved location, otherwise load sample data.
+    if let newOne = dc.loadRoles() {
+      dc.newRoles = newOne
+    } else {
+      dc.loadDefaultRoles()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print(dc.roleCount)
-        return dc.roleCount
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
-
-        let row = indexPath.row
+  }
+  
+  // MARK: - Table view data source
+  
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    // #warning Incomplete implementation, return the number of sections
+    return 1
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // #warning Incomplete implementation, return the number of rows
+    return dc.roleCount
+  }
+  
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
+    //
+    //        let row = indexPath.row
+    //
+    //        let role = dc.getRole(index: row)
+    //        if let label = cell.textLabel{
+    //            label.text = role
+    //        }
+    //
+    //        if(dc.getRole(index: row) == dc.role){
+    //            cell.accessoryType = .checkmark
+    //        }
+    //
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
+    
+    let row = indexPath.row
+    
+    if (dc.newRoles.isEmpty){
+      let role = dc.getRole(index: row)
+      if let label = cell.textLabel{
+        label.text = role
+      }
+      dc.role = role
+      
+      if(dc.getRole(index: row) == dc.role){
+        cell.accessoryType = .checkmark
+      }
+    } else {
+      let role = dc.newRoles[row]
+      if let label = cell.textLabel{
+        label.text = role
+      }
+      dc.role = role
+      
+      if(dc.newRoles[row] == dc.outRole){
+        cell.accessoryType = .checkmark
+      } else if (dc.newRoles[row] == dc.loadRole()){
+        cell.accessoryType = .checkmark
         
-        let role = dc.getRole(index: row)
-        if let label = cell.textLabel{
-            label.text = role
-        }
-        
-        if(dc.getRole(index: row) == dc.role){
-            cell.accessoryType = .checkmark
-        }
-
-        return cell
+      }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        dc.role = dc.getRole(index: row)
-        dc.rank = "Rank"
-        
-        if let nc = self.navigationController{
-            nc.popViewController(animated: true)
-        }
-    }
+    return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let row = indexPath.row
+//    dc.role = dc.getRole(index: row)
+//    dc.rank = "Rank"
+//    
+//    if let nc = self.navigationController{
+//      nc.popViewController(animated: true)
+//    }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    if(dc.newRoles.isEmpty){
+      dc.role = dc.getRole(index: row)
+      dc.savedRole()
+      
+      dc.newRanks = dc.getRanks(role: dc.role)
+      dc.savedRanks()
+      
+    } else {
+      dc.outRole = dc.newRoles[row]
+      dc.savedRole()
+      
+      dc.newRanks = dc.getRanks(role: dc.outRole)
+      dc.savedRanks()
+      
     }
-    */
+    dc.rank = "Rank"
+    
+    
+    //    if let nc = self.navigationController{
+    //      nc.popViewController(animated: true)
+    //    }
+    performSegue(withIdentifier: "fromRole", sender: self)
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+  }
+  override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    if(dc.newRoles == []){
+      var roles = dc.getRoles()
+      let itemToMove = roles[sourceIndexPath.row]
+      roles.remove(at: sourceIndexPath.row)
+      roles.insert(itemToMove, at: destinationIndexPath.row)
+      
+      dc.newRoles = roles
+      dc.savedRoles()
+      
+    } else {
+      var roles = dc.newRoles
+      let itemToMove = roles[sourceIndexPath.row]
+      roles.remove(at: sourceIndexPath.row)
+      roles.insert(itemToMove, at: destinationIndexPath.row)
+      
+      dc.newRoles = roles
+      dc.savedRoles()
+      
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
+  
+  
 }

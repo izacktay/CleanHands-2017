@@ -13,6 +13,11 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var outEmail: UIBarButtonItem!
     
     let dc = DataController.sharedInstance
+  
+  //MARK: Archiving Paths
+  static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+  static let aURLlocations = DocumentsDirectory.appendingPathComponent("locations")
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +25,17 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         if !MFMailComposeViewController.canSendMail() {
             print("Mail service not available")
             return
-            
-            
         }
-        
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+      
+      let button : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+      navigationItem.rightBarButtonItems = [editButtonItem, button]
+      
+      // Load any saved location, otherwise load sample data.
+      if let newOne = dc.loadLocations() {
+        dc.newLocations = newOne
+      } else {
+        dc.loadDefaultLocations()
+      }
     }
     
 //    func sendEmail() {
@@ -70,11 +75,22 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
         let row = indexPath.row
         
+//        let location = dc.getLocation(index: row)
+//        if let label = cell.textLabel{
+//            label.text = location
+//        }
+      if (dc.newLocations == []){
         let location = dc.getLocation(index: row)
         if let label = cell.textLabel{
-            label.text = location
+          label.text = location
         }
-        
+      } else {
+        let location = dc.newLocations[row]
+        if let label = cell.textLabel{
+          label.text = location
+        }
+      }
+
         return cell
     }
     
@@ -96,6 +112,30 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         }
         self.present(composeVC, animated: true, completion: nil)
     }
+  override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    if(dc.newLocations == []){
+      var locations = dc.getLocations()
+      let itemToMove = locations[sourceIndexPath.row]
+      locations.remove(at: sourceIndexPath.row)
+      locations.insert(itemToMove, at: destinationIndexPath.row)
+      
+      dc.newLocations = locations
+      dc.savedLocations()
+    } else {
+      var locations = dc.newLocations
+      let itemToMove = locations[sourceIndexPath.row]
+      locations.remove(at: sourceIndexPath.row)
+      locations.insert(itemToMove, at: destinationIndexPath.row)
+      
+      dc.newLocations = locations
+      dc.savedLocations()
+      
+    }
+  }
 }
 
         //composeVC.addAttachmentData(Data, mimeType: String, fileName: String)
