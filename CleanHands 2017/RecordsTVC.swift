@@ -24,7 +24,6 @@ class RecordsTVC: UITableViewController {
     @IBOutlet weak var segAction4: UISegmentedControl!
     @IBOutlet weak var segAction5: UISegmentedControl!
     
-    
     var notes1 : String = ""
     var notes2 : String = ""
     var notes3 : String = ""
@@ -72,14 +71,13 @@ class RecordsTVC: UITableViewController {
         print("start")
         
         // get the title of the segments
-        // need guard statements
+        // need guard statements to condition if segments are not selected
         let  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
         let  action2 : String = segAction2.titleForSegment(at: segAction2.selectedSegmentIndex)!
         let  action3 : String = segAction3.titleForSegment(at: segAction3.selectedSegmentIndex)!
         let  action4 : String = segAction4.titleForSegment(at: segAction4.selectedSegmentIndex)!
         let  action5 : String = segAction5.titleForSegment(at: segAction5.selectedSegmentIndex)!
         
-        print("80")
         //saving
         opData1.actions = action1
         opData1.notes = notes1
@@ -92,9 +90,7 @@ class RecordsTVC: UITableViewController {
         opData3.actions = action3
         opData3.notes = notes3
         opData3.conditions = condition3
-        
-        print("94")
-        
+    
         opData4.actions = action4
         opData4.notes = notes4
         opData4.conditions = condition4
@@ -103,16 +99,14 @@ class RecordsTVC: UITableViewController {
         opData5.notes = notes5
         opData5.conditions = condition5
         
-        print("104")
         dc.observationArr.append(opData1)
         dc.observationArr.append(opData2)
         dc.observationArr.append(opData3)
         dc.observationArr.append(opData4)
         dc.observationArr.append(opData5)
         
-        print("111")
-        
-        dc.creatCSV()
+        dc.createRecord()
+        dc.createCSV()
         
     }
     

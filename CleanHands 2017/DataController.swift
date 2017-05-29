@@ -115,11 +115,7 @@ class DataController {
     var notesText : String = ""
     
     
-    // observation tvc
-    
-    
-    
-    //which will
+    // stores the 5 observation points in order
     var observationArr : [ObservationPointData] = []
     
     //record
@@ -130,20 +126,17 @@ class DataController {
     // create csv
     
     // MARK: CSV file creating
-    func creatCSV() -> Void {
+    func createCSV() -> Void {
         
-        record1.location = "A"
-        record1.role = role
-        record1.rank = rank
-        recordArr.append(record1)
-        print("hi")
+        
         
         let fileName = "records.csv"
         let path = NSURL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(fileName)
-        var csvText = "Date,Task Name,Time Started,Time Ended\n"
+        var csvText = "Date,Location,Job Role,Rank,5 moments,Note,N95,Glove,Gown,Mask\n"
         
+        print(recordArr[0].role)
         for record in recordArr {
-            let newLine = "\(record.location),\(record.role),\(record.rank)\n"
+            let newLine = "\(Date()),\(record.location),\(record.role),\(record.rank),\(record.observationMoment),\(record.note),\(record.n95Mask),\(record.glove),\(record.gown),\(record.surgicalMask)\n"
             csvText.append(newLine)
         }
         
@@ -155,7 +148,98 @@ class DataController {
         }
         print(path ?? "not found")
     }
-
+    
+    
+    func createRecord() -> Void {
+        
+        var selCondition : Int = 4
+        var observationMoment : String = ""
+        
+        record1.location = "A"
+        record1.role = role
+        record1.rank = rank
+        
+        for i in 0...4 {
+            
+            let notes = observationArr[i].notes
+            let actions = observationArr[i].actions
+            let conditions = observationArr[i].conditions
+            
+            
+            
+            for condition in conditions{
+                if (condition.selected == false){
+                    selCondition -= 1
+                }
+            }
+            
+            //set observation moment name
+            if (i == 0){
+                observationMoment = "Before Contact"
+            }else if (i == 1) {
+                observationMoment = "After Contact"
+            }else if (i == 2){
+                observationMoment = "Before Exposure"
+            }else if (i == 3){
+                observationMoment = "After Exposure"
+            }else {
+                observationMoment = "After Environment"
+            }
+            
+            
+            
+            // set n95, glove, gown, mask
+            
+            guard conditions.count < 0 else {
+//                print ("hi")
+//                if (conditions[0].selected == true){
+//                    record1.n95Mask = "True"
+//                }else {
+//                    record1.n95Mask = "N/A"
+//                }
+//                
+//                if (conditions[1].selected == true){
+//                    record1.glove = "True"
+//                }else {
+//                    record1.glove = "N/A"
+//                }
+//                
+//                if (conditions[2].selected == true){
+//                    record1.gown = "True"
+//                }else {
+//                    record1.gown = "N/A"
+//                }
+//                
+//                if (conditions[3].selected == true){
+//                    record1.surgicalMask = "True"
+//                }else {
+//                    record1.surgicalMask = "N/A"
+//                }
+                
+                guard notes == "", actions == "", selCondition == 0 else{
+                    
+                    record1.note = notes
+                    record1.complianceAction = actions
+                    record1.observationMoment = observationMoment
+                    
+                    
+                    recordArr.append(record1)
+                    return
+                }
+                return
+            }
+        
+            
+            // nothing will be ran if the observation point is empty
+        }
+        // for loop
+        
+        
+        
+        
+        
+    }
+    
     
     
     
