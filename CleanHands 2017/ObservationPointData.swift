@@ -14,4 +14,5 @@ public class ObservationPointData {
     var actions : String = ""
     var conditions : [ConditionsData] = []
     
+    
 }

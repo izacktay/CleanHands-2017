@@ -165,7 +165,7 @@ class ConditionsTVC: UITableViewController {
             
             if(selConditionsArr[3] == false){
                 selConditionsArr[3] = true
-                dc.mask .selected = true
+                dc.mask.selected = true
                 selCondArr[3] = dc.mask
             }
         }
@@ -289,10 +289,17 @@ class ConditionsTVC: UITableViewController {
     // add the array into the data controller's array, depending on which segue was called.
     func addConditions (_ alert : UIAlertAction){
         
-        let rTVC = RecordsTVC()
+        performSegue(withIdentifier: "unwindCondition", sender: self)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rTVC = segue.destination as! RecordsTVC
         // assign the selCondtionsArr to the BooleanArr array list in ObservationsTVC
         if (segueIdentifier == "sls1"){
             rTVC.condition1 = selCondArr
+            rTVC.test = "test test"
         }else if (segueIdentifier == "sls2"){
             rTVC.condition2 = selCondArr
         }else if (segueIdentifier == "sls3"){
@@ -302,18 +309,16 @@ class ConditionsTVC: UITableViewController {
         }else if (segueIdentifier == "sls5"){
             rTVC.condition5 = selCondArr
         }
-        
-        if let vc = self.navigationController{
-            vc.popViewController(animated: true)
-        }
-        
-        
     }
+    
+    
+    
+    
     
     func cancelAct (_ alert : UIAlertAction){
         
     }
-
-
+    
+    
     
 }

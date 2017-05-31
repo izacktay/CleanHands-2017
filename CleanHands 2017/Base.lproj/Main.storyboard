@@ -622,8 +622,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="lkE-Qu-Uuc" kind="unwind" identifier="unwindCondition" unwindAction="unwindFromConditions:" id="9K9-OW-ylZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTL-Nh-dPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lkE-Qu-Uuc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4668" y="957.57121439280365"/>
         </scene>
