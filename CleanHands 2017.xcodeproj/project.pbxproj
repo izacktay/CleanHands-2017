@@ -11,10 +11,10 @@
 		84092AF61EB0571A00ABAED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF41EB0571A00ABAED7 /* Main.storyboard */; };
 		84092AF81EB0571A00ABAED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF71EB0571A00ABAED7 /* Assets.xcassets */; };
 		84092AFB1EB0571A00ABAED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */; };
-		84092B031EB0578000ABAED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B021EB0578000ABAED7 /* MainViewController.swift */; };
 		84092B051EB0579000ABAED7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B041EB0579000ABAED7 /* DataController.swift */; };
 		84092B2B1EB0CF0A00ABAED7 /* RecordsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */; };
 		84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */; };
+		841153771EDEC5000021B613 /* RecordsCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841153761EDEC5000021B613 /* RecordsCollectionViewVC.swift */; };
 		841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54941EC06F9B0072F776 /* ConditionsData.swift */; };
 		841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54961EC07C370072F776 /* ObservationPointData.swift */; };
 		844454261EC17FCC00506083 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844454251EC17FCC00506083 /* NotesVC.swift */; };
@@ -35,10 +35,10 @@
 		84092AF71EB0571A00ABAED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84092AFA1EB0571A00ABAED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84092AFC1EB0571A00ABAED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84092B021EB0578000ABAED7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84092B041EB0579000ABAED7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTVC.swift; sourceTree = "<group>"; };
 		84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
+		841153761EDEC5000021B613 /* RecordsCollectionViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewVC.swift; sourceTree = "<group>"; };
 		841E54941EC06F9B0072F776 /* ConditionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsData.swift; sourceTree = "<group>"; };
 		841E54961EC07C370072F776 /* ObservationPointData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationPointData.swift; sourceTree = "<group>"; };
 		844454251EC17FCC00506083 /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
@@ -99,7 +99,6 @@
 				84092AF71EB0571A00ABAED7 /* Assets.xcassets */,
 				84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */,
 				84092AFC1EB0571A00ABAED7 /* Info.plist */,
-				84092B021EB0578000ABAED7 /* MainViewController.swift */,
 				84092B041EB0579000ABAED7 /* DataController.swift */,
 				84092B2A1EB0CF0A00ABAED7 /* RecordsTVC.swift */,
 				84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */,
@@ -111,6 +110,7 @@
 				841E54961EC07C370072F776 /* ObservationPointData.swift */,
 				DF486B751ED54C8A0020C5B5 /* CSVViewController.swift */,
 				DF486B771ED551360020C5B5 /* MainMenuViewController.swift */,
+				841153761EDEC5000021B613 /* RecordsCollectionViewVC.swift */,
 			);
 			path = "CleanHands 2017";
 			sourceTree = "<group>";
@@ -199,13 +199,13 @@
 				84092B2B1EB0CF0A00ABAED7 /* RecordsTVC.swift in Sources */,
 				84092B051EB0579000ABAED7 /* DataController.swift in Sources */,
 				844454261EC17FCC00506083 /* NotesVC.swift in Sources */,
-				84092B031EB0578000ABAED7 /* MainViewController.swift in Sources */,
 				847891531EB4B75D00BC09C5 /* RecordData.swift in Sources */,
 				84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */,
 				DF486B781ED551360020C5B5 /* MainMenuViewController.swift in Sources */,
 				841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */,
 				84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */,
 				845165661EB46D0900A72524 /* RankTVC.swift in Sources */,
+				841153771EDEC5000021B613 /* RecordsCollectionViewVC.swift in Sources */,
 				841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */,
 				84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */,
 				DF486B761ED54C8A0020C5B5 /* CSVViewController.swift in Sources */,

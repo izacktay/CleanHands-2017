@@ -90,9 +90,7 @@ class RecordsTVC: UITableViewController {
     
     // saving records as a single object to records class
     
-    @IBAction func unwindFromConditions(_ segue: UIStoryboardSegue){
-        
-    }
+    
     
     @IBAction func actSaveRecord(_ sender: UIBarButtonItem) {
         //saving segmented control (actions), notes (notes), Conditions (conditions)
@@ -227,6 +225,51 @@ class RecordsTVC: UITableViewController {
         outRank.text = dc.outRank
         print(#line, dc.outRank)
     }
+    
+    @IBAction func unwindFromConditions(_ segue: UIStoryboardSegue){
+        
+    }
+    
+    
+    @IBAction func actAction1(_ sender: UISegmentedControl) {
+        
+        if (sender.selectedSegmentIndex == 2){
+            performSegue(withIdentifier: "notes1", sender: self)
+        }
+        
+        
+    }
+    
+    
+    @IBAction func actAction2(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 2){
+            performSegue(withIdentifier: "notes2", sender: self)
+        }
+    }
+    
+    
+    @IBAction func actAction3(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 2){
+            performSegue(withIdentifier: "notes3", sender: self)
+        }
+    }
+    
+    
+    @IBAction func actAction4(_ sender: UISegmentedControl) {
+        
+        if (sender.selectedSegmentIndex == 2){
+            performSegue(withIdentifier: "notes4", sender: self)
+        }
+    }
+    
+    @IBAction func actAction5(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 2){
+            performSegue(withIdentifier: "notes5", sender: self)
+        }
+    }
+    
+    
+    
     
     
     

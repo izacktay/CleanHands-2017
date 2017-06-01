@@ -129,6 +129,9 @@
                                                         <segment title="Rub"/>
                                                         <segment title="No"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actAction1:" destination="UUe-Wk-5jE" eventType="valueChanged" id="vKq-EM-OI9"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-JZ-gag">
                                                     <rect key="frame" x="276" y="6" width="41" height="30"/>
@@ -171,6 +174,9 @@
                                                         <segment title="Rub"/>
                                                         <segment title="No"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actAction2:" destination="UUe-Wk-5jE" eventType="valueChanged" id="6QI-WR-Rn3"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi8-UL-pm0">
                                                     <rect key="frame" x="276" y="6" width="41" height="30"/>
@@ -213,6 +219,9 @@
                                                         <segment title="Rub"/>
                                                         <segment title="No"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actAction3:" destination="UUe-Wk-5jE" eventType="valueChanged" id="F3A-2G-vUI"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JF-is-a3X">
                                                     <rect key="frame" x="276" y="6" width="41" height="30"/>
@@ -255,6 +264,9 @@
                                                         <segment title="Rub"/>
                                                         <segment title="No"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actAction4:" destination="UUe-Wk-5jE" eventType="valueChanged" id="wne-5f-aAS"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-jp-DTb">
                                                     <rect key="frame" x="276" y="6" width="41" height="30"/>
@@ -297,6 +309,9 @@
                                                         <segment title="Rub"/>
                                                         <segment title="No"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actAction5:" destination="UUe-Wk-5jE" eventType="valueChanged" id="AAa-Bc-Gu9"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-fi-Sc3">
                                                     <rect key="frame" x="276" y="6" width="41" height="30"/>
@@ -467,7 +482,7 @@
                                 <rect key="frame" x="164" y="376" width="46" height="30"/>
                                 <state key="normal" title="View"/>
                                 <connections>
-                                    <segue destination="wU0-xz-nbF" kind="show" id="P3J-Sg-ery"/>
+                                    <segue destination="Hfj-jC-8ZL" kind="show" id="YNh-dy-Yw8"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cleanHands" translatesAutoresizingMaskIntoConstraints="NO" id="OKc-8D-VB2">
@@ -513,18 +528,91 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K0P-JF-cxB">
+                                <rect key="frame" x="40" y="45" width="294" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hnr-Tt-ryR">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3qQ-NA-iHe" customClass="cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="K0P-JF-cxB" firstAttribute="top" secondItem="jpd-uT-PiA" secondAttribute="bottom" constant="25" id="5BE-pT-tUQ"/>
+                            <constraint firstItem="ZOY-Lb-cTQ" firstAttribute="top" secondItem="K0P-JF-cxB" secondAttribute="bottom" constant="46" id="Z8H-l5-n7P"/>
                             <constraint firstItem="gIu-5U-8Yr" firstAttribute="top" secondItem="ZOY-Lb-cTQ" secondAttribute="bottom" id="ch6-B2-hXh"/>
+                            <constraint firstItem="K0P-JF-cxB" firstAttribute="leading" secondItem="CH6-tx-Huj" secondAttribute="leadingMargin" constant="24" id="fWA-4O-viK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K0P-JF-cxB" secondAttribute="trailing" constant="25" id="hUp-D4-uCo"/>
                             <constraint firstAttribute="trailing" secondItem="ZOY-Lb-cTQ" secondAttribute="trailing" id="mmb-Wt-hgt"/>
                             <constraint firstItem="ZOY-Lb-cTQ" firstAttribute="leading" secondItem="CH6-tx-Huj" secondAttribute="leading" id="reR-MJ-OaK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outCollectionView" destination="K0P-JF-cxB" id="WEn-WQ-3bU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkk-bi-ZE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184.8000000000002" y="922.48875562218893"/>
+            <point key="canvasLocation" x="3001" y="1332"/>
+        </scene>
+        <!--Records Collection ViewVC-->
+        <scene sceneID="BV9-hx-pP6">
+            <objects>
+                <viewController id="Hfj-jC-8ZL" customClass="RecordsCollectionViewVC" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xNZ-Vr-Fpz"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTX-eH-5q5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dga-K5-MQe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BC1-zx-snr">
+                                <rect key="frame" x="40" y="89" width="294" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="iVj-aR-X3c">
+                                    <size key="itemSize" width="70" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="WAa-TH-mtj" customClass="cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="outCollectionView" destination="BC1-zx-snr" id="aGI-KF-XGP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXU-jk-mfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3747" y="917"/>
         </scene>
         <!--Ranks-->
         <scene sceneID="cmI-bN-Q4d">
@@ -654,7 +742,7 @@
         <image name="cleanHands" width="780" height="288"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0OS-GA-Ya3"/>
         <segue reference="ig0-P7-8rv"/>
+        <segue reference="wjq-Bk-Ohg"/>
     </inferredMetricsTieBreakers>
 </document>

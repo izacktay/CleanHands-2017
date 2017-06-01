@@ -9,9 +9,16 @@
 import UIKit
 import MessageUI
 
-class CSVViewController: UIViewController, MFMailComposeViewControllerDelegate  {
+class CSVViewController: UIViewController, MFMailComposeViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    let dc = DataController.sharedInstance
+    
+    
+    @IBOutlet weak var outCollectionView: UICollectionView!
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         
         if !MFMailComposeViewController.canSendMail() {
@@ -20,8 +27,21 @@ class CSVViewController: UIViewController, MFMailComposeViewControllerDelegate  
             
             
         }
+        print("test")
+        outCollectionView.delegate = self
+        outCollectionView.dataSource = self
+        if let cv = self.outCollectionView {
+            cv.allowsMultipleSelection = true
+        }
+        
+        
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        outCollectionView.reloadData()
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -66,6 +86,27 @@ class CSVViewController: UIViewController, MFMailComposeViewControllerDelegate  
             }
             
         }
+    
+    
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
+                                                      for: indexPath)
+        
+        cell.backgroundColor = UIColor.gray
+        
+        return cell
+    }
     }
 //        print("Hi")
 //        //sendEmail()
