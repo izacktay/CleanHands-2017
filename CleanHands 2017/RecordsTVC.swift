@@ -40,6 +40,12 @@ class RecordsTVC: UITableViewController {
     var notes4 : String = ""
     var notes5 : String = ""
     
+    var action1 : String = ""
+    var action2 : String = ""
+    var action3 : String = ""
+    var action4 : String = ""
+    var action5 : String = ""
+    
     var defaultCondition = ConditionsData(description: "")
     
     
@@ -100,13 +106,14 @@ class RecordsTVC: UITableViewController {
         
         // get the title of the segments
         // need guard statements to condition if segments are not selected
-        let  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
-        let  action2 : String = segAction2.titleForSegment(at: segAction2.selectedSegmentIndex)!
-        let  action3 : String = segAction3.titleForSegment(at: segAction3.selectedSegmentIndex)!
-        let  action4 : String = segAction4.titleForSegment(at: segAction4.selectedSegmentIndex)!
-        let  action5 : String = segAction5.titleForSegment(at: segAction5.selectedSegmentIndex)!
+        
         
         //saving
+        action1 = (segAction1.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)! : ""
+        action2 = (segAction2.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction2.selectedSegmentIndex)! : ""
+        action3 = (segAction3.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction3.selectedSegmentIndex)! : ""
+        action4 = (segAction4.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction4.selectedSegmentIndex)! : ""
+        action5 = (segAction5.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction5.selectedSegmentIndex)! : ""
         
         
         print(test)
