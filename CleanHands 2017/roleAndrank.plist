@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Nurse</key>
+	<array>
+		<string>Student</string>
+		<string>Experienced</string>
+	</array>
+	<key>Doctor</key>
+	<array>
+		<string>Junior</string>
+		<string>Senior</string>
+	</array>
+	<key>ENDO</key>
+	<array/>
+	<key>ENT</key>
+	<array/>
+	<key>ER</key>
+	<array/>
+	<key>EYE</key>
+	<array/>
+	<key>GASTRO</key>
+	<array/>
+	<key>GERI</key>
+	<array/>
+	<key>HCA</key>
+	<array/>
+	<key>Housekeeper</key>
+	<array/>
+	<key>ID</key>
+	<array/>
+	<key>MED</key>
+	<array/>
+	<key>MED Student</key>
+	<array/>
+	<key>NES</key>
+	<array/>
+	<key>NEURO</key>
+	<array/>
+	<key>NUR Student</key>
+	<array/>
+	<key>OT</key>
+	<array/>
+	<key>OTO</key>
+	<array/>
+	<key>Other AHP</key>
+	<array/>
+	<key>PSY</key>
+	<array/>
+	<key>PT</key>
+	<array/>
+	<key>Phlebo</key>
+	<array/>
+	<key>Porter</key>
+	<array/>
+	<key>RAD</key>
+	<array/>
+	<key>REHAB</key>
+	<array/>
+	<key>RENAL</key>
+	<array/>
+	<key>RESPI</key>
+	<array/>
+	<key>RT</key>
+	<array/>
+	<key>Radiographer</key>
+	<array/>
+	<key>ST</key>
+	<array/>
+	<key>SUR</key>
+	<array/>
+	<key>UNKNOWN</key>
+	<array/>
+	<key>URO</key>
+	<array/>
+	<key>ANA</key>
+	<array/>
+	<key>CVM</key>
+	<array/>
+	<key>DENTAL</key>
+	<array/>
+	<key>DERM</key>
+	<array/>
+</dict>
+</plist>

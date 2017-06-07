@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>A&amp;E</string>
+	<string>Cath Lab</string>
+	<string>Day Surgery</string>
+	<string>Endoscopy</string>
+	<string>MICU</string>
+	<string>MOT</string>
+	<string>Radiology</string>
+	<string>Renal</string>
+	<string>SC</string>
+	<string>SICU</string>
+	<string>Ward 14</string>
+	<string>Ward 15</string>
+	<string>Ward 16</string>
+	<string>Ward 17</string>
+	<string>Ward 18</string>
+	<string>Ward 19</string>
+	<string>Ward 25</string>
+	<string>Ward 26</string>
+	<string>Ward 27</string>
+	<string>Ward 28</string>
+	<string>Ward 29</string>
+	<string>Ward 34</string>
+	<string>Ward 35</string>
+	<string>Ward 36</string>
+	<string>Ward 37</string>
+	<string>Ward 38</string>
+	<string>Ward 39</string>
+	<string>Ward 44</string>
+	<string>Ward 45</string>
+	<string>Ward 46</string>
+	<string>Ward 47</string>
+	<string>Ward 48</string>
+	<string>Ward 49</string>
+	<string>Ward 55</string>
+	<string>Ward 56</string>
+	<string>Ward 57</string>
+	<string>Ward 58</string>
+	<string>Ward 59</string>
+	<string>Ward 64</string>
+	<string>Ward 67</string>
+	<string>Ward 68</string>
+</array>
+</plist>
