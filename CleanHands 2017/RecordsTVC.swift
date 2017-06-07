@@ -17,6 +17,8 @@ class RecordsTVC: UITableViewController {
     
     var updatedRole = ""
     var updatedRank = ""
+    var switchState : Bool = false
+    var switchString : String = ""
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -230,18 +232,32 @@ class RecordsTVC: UITableViewController {
         
     }
     
+    @IBAction func unwindFromSettings(_ segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func unwindFromLocation(_ segue: UIStoryboardSegue){
+        
+    }
+    
+    
     
     @IBAction func actAction1(_ sender: UISegmentedControl) {
-        
+        guard switchState == true else{
+            return
+        }
         if (sender.selectedSegmentIndex == 2){
             performSegue(withIdentifier: "notes1", sender: self)
+            print(switchString)
         }
-        
         
     }
     
     
     @IBAction func actAction2(_ sender: UISegmentedControl) {
+        guard switchState == true else{
+            return
+        }
         if (sender.selectedSegmentIndex == 2){
             performSegue(withIdentifier: "notes2", sender: self)
         }
@@ -249,6 +265,9 @@ class RecordsTVC: UITableViewController {
     
     
     @IBAction func actAction3(_ sender: UISegmentedControl) {
+        guard switchState == true else{
+            return
+        }
         if (sender.selectedSegmentIndex == 2){
             performSegue(withIdentifier: "notes3", sender: self)
         }
@@ -256,21 +275,24 @@ class RecordsTVC: UITableViewController {
     
     
     @IBAction func actAction4(_ sender: UISegmentedControl) {
-        
+        guard switchState == true else{
+            return
+        }
         if (sender.selectedSegmentIndex == 2){
             performSegue(withIdentifier: "notes4", sender: self)
         }
     }
     
     @IBAction func actAction5(_ sender: UISegmentedControl) {
+        guard switchState == true else{
+            return
+        }
         if (sender.selectedSegmentIndex == 2){
             performSegue(withIdentifier: "notes5", sender: self)
         }
     }
     
     
-    
-    
-    
-    
+
 }
+

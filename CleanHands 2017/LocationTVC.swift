@@ -94,6 +94,10 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "fromLocation", sender: self)
+    }
+    
     @IBAction func actEmail(_ sender: UIBarButtonItem) {
         //sendEmail()
         let composeVC = MFMailComposeViewController()

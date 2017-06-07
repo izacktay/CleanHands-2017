@@ -143,7 +143,7 @@ class DataController {
         var csvText = "Date,Location,Job Role,Rank,5 moments,Action,Note,N95,Glove,Gown,Mask\n"
         
         for record in recordArr {
-            let newLine = "\(Date()),\(record.location),\(record.role),\(record.rank),\(record.observationMoment),\(record.complianceAction),\(record.note),\(record.n95Mask),\(record.glove),\(record.gown),\(record.surgicalMask)\n"
+            let newLine = "\(record.date),\(record.location),\(record.role),\(record.rank),\(record.observationMoment),\(record.complianceAction),\(record.note),\(record.n95Mask),\(record.glove),\(record.gown),\(record.surgicalMask)\n"
             csvText.append(newLine)
         }
         
@@ -160,8 +160,6 @@ class DataController {
     func createRecord() -> Void {
         
         var selCond = 4
-        
-        
         
         for i in 0...4{
             
@@ -228,6 +226,7 @@ class DataController {
             //compliance action
             record1.complianceAction = complianceAction
             record1.note = notes
+            record1.date = Date()
             
             recordArr.append(record1)
         }

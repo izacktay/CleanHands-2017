@@ -15,7 +15,7 @@ class RecordData {
     
     var observationPoint : [ObservationPointData] = []
     
-//    private var date : Date
+    var date : Date = Date()
     var location : String = ""
     var role : String = ""
     var rank : String = ""
