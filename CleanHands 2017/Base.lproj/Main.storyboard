@@ -369,6 +369,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="outLoc" destination="18p-rg-Xuv" id="GOL-ft-Rwh"/>
                         <outlet property="outRank" destination="92t-ch-yJQ" id="cPf-Ep-pma"/>
                         <outlet property="outRole" destination="ZWa-GN-OFc" id="gaM-rq-5ig"/>
                         <outlet property="segAction1" destination="VCb-zJ-MEY" id="2Gt-IP-poL"/>

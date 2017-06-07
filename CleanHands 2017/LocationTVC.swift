@@ -19,6 +19,7 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
   //MARK: Archiving Paths
   static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
   static let aURLlocations = DocumentsDirectory.appendingPathComponent("locations")
+  static let aURLOutLoc = DocumentsDirectory.appendingPathComponent("outLoc")
   
   
   override func viewDidLoad() {
@@ -46,15 +47,9 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
   func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
     controller.dismiss(animated: true, completion: nil)
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
     return 1
   }
   
@@ -88,6 +83,22 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let row = indexPath.row
+  
+    if(dc.newLocations.isEmpty){
+      let locations = dc.getLocations()
+      dc.outLocations = locations[row]
+      
+      dc.savedLocation()
+    } else {
+      let locations = dc.newLocations
+      dc.outLocations = locations[row]
+      
+      print(dc.outLocations, #line)
+      dc.savedLocation()
+    }
+
     performSegue(withIdentifier: "fromLocation", sender: self)
   }
   
@@ -111,11 +122,7 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
   override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
     return true
   }
-  
-//  @IBAction func actEdit(_ sender: UIBarButtonItem) {
-//    tableView.
-//    
-//  }
+
   override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     if(dc.newLocations == []){
       var locations = dc.getLocations()
