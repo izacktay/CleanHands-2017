@@ -18,19 +18,28 @@ class DataController {
     let n95 = ConditionsData(description: "N95")
     let gown = ConditionsData(description: "Gown")
     let mask = ConditionsData(description: "Mask")
+    // location array
+    var locations : [String] = []
+    var roleAndrank : [String : [String]] = [:]
     
     private init() {
         
         
         conditions = ["Airborne" : [n95], "Contact" : [glove, gown], "Droplet" : [mask]]
         
-        roleAndrank = ["Nurse" : ["Student", "Experienced"], "Doctor" : ["Junior", "Senior"]]
+//        roleAndrank = ["Nurse" : ["Student", "Experienced"], "Doctor" : ["Junior", "Senior"]]
+        
+        locations = readArrayPlist(filename: "locations") as! [String]
+        
+        roleAndrank = readDictionaryPlist(filename: "roleAndrank") as! [String : [String]]
         
     }
     // need dictionary that stores String : String Array for
     
-    // location array
-    var locations : [String] = ["A", "B", "C"]
+    
+    
+    
+    
     
     //get single location
     func getLocation(index:Int) -> String {
@@ -42,8 +51,6 @@ class DataController {
         return locations.count
     }
     
-    //roleAndrank dictionary
-    var roleAndrank : [String : [String]]
     
     func getRoles() -> [String]{
         return Array(roleAndrank.keys)
@@ -129,6 +136,32 @@ class DataController {
     //record
     
     var recordArr : [RecordData] = []
+    
+    func readDictionaryPlist(filename:String) -> [String : Any]? {
+        // get the path of the plist file
+        // read the plist into memory
+        // convert the plist to a [String:Any] dictionary
+        guard let path = Bundle.main.path(forResource: filename, ofType: "plist"),
+            let data = FileManager.default.contents(atPath: path),
+            let retval = try! PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String : Any] else {
+                return nil
+        }
+        
+        return retval
+    }
+    
+    func readArrayPlist(filename:String) -> [Any]? {
+        // get the path of the plist file
+        // read the plist into memory
+        // convert the plist to an [Any] array
+        guard let path = Bundle.main.path(forResource: filename, ofType: "plist"),
+            let data = FileManager.default.contents(atPath: path),
+            let retval = try! PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [Any] else {
+                return nil
+        }
+        
+        return retval
+    }
     
     
     // create csv
