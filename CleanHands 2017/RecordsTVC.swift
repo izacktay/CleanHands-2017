@@ -91,84 +91,99 @@ class RecordsTVC: UITableViewController {
     print(updatedRank)
     print(notes1)
   }
- 
+  
   // saving records as a single object to records class
   
   @IBAction func actSaveRecord(_ sender: UIBarButtonItem) {
-    
-    //saving segmented control (actions), notes (notes), Conditions (conditions)
-    // into one Observation Point data (ops)
-    
-    // get the title of the segments
-    // need guard statements to condition if segments are not selected
-    let  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
-    let  action2 : String = segAction2.titleForSegment(at: segAction2.selectedSegmentIndex)!
-    let  action3 : String = segAction3.titleForSegment(at: segAction3.selectedSegmentIndex)!
-    let  action4 : String = segAction4.titleForSegment(at: segAction4.selectedSegmentIndex)!
-    let  action5 : String = segAction5.titleForSegment(at: segAction5.selectedSegmentIndex)!
-    
-    //saving
-    
-    
-    print(test)
-    opData1.actions = action1
-    opData1.notes = notes1
-    if (condition1.isEmpty == false){
-      opData1.conditions = condition1
-    }else{
-      condition1 = Array(repeating: defaultCondition, count: 4)
-      opData1.conditions = condition1
+    if(outRole.text == "Role" || outRank.text == "Rank" || outLoc.text == "Location"){
+      let alert = UIAlertController(title: "Error",
+                                    message: "Please fill in all selections",
+                                    preferredStyle:UIAlertControllerStyle.alert)
+      
+      // create a UIAlertAction object
+      let okAction = UIAlertAction(title:"OK",
+                                   style: UIAlertActionStyle.default,
+                                   handler: nil)
+      
+      // add the UIAlertAction object to the UIAlertController object
+      alert.addAction(okAction)
+      
+      // display the UIAlertController object
+      present(alert, animated: true, completion: nil)
+    } else {
+      //saving segmented control (actions), notes (notes), Conditions (conditions)
+      // into one Observation Point data (ops)
+      
+      // get the title of the segments
+      // need guard statements to condition if segments are not selected
+      let  action1 : String = segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)!
+      let  action2 : String = segAction2.titleForSegment(at: segAction2.selectedSegmentIndex)!
+      let  action3 : String = segAction3.titleForSegment(at: segAction3.selectedSegmentIndex)!
+      let  action4 : String = segAction4.titleForSegment(at: segAction4.selectedSegmentIndex)!
+      let  action5 : String = segAction5.titleForSegment(at: segAction5.selectedSegmentIndex)!
+      
+      //saving
+      
+      
+      print(test)
+      opData1.actions = action1
+      opData1.notes = notes1
+      if (condition1.isEmpty == false){
+        opData1.conditions = condition1
+      }else{
+        condition1 = Array(repeating: defaultCondition, count: 4)
+        opData1.conditions = condition1
+      }
+      
+      
+      opData2.actions = action2
+      opData2.notes = notes2
+      if (condition2.isEmpty == false){
+        opData2.conditions = condition2
+      }else{
+        condition2 = Array(repeating: defaultCondition, count: 4)
+        opData2.conditions = condition2
+      }
+      
+      opData3.actions = action3
+      opData3.notes = notes3
+      if (condition3.isEmpty == false){
+        opData3.conditions = condition3
+      }else{
+        condition3 = Array(repeating: defaultCondition, count: 4)
+        opData3.conditions = condition3
+      }
+      
+      opData4.actions = action4
+      opData4.notes = notes4
+      if (condition4.isEmpty == false){
+        opData4.conditions = condition4
+      }else{
+        condition4 = Array(repeating: defaultCondition, count: 4)
+        opData4.conditions = condition4
+      }
+      
+      opData5.actions = action5
+      opData5.notes = notes5
+      if (condition5.isEmpty == false){
+        opData5.conditions = condition5
+      }else{
+        condition5 = Array(repeating: defaultCondition, count: 4)
+        opData5.conditions = condition5
+      }
+      
+      dc.observationArr.append(opData1)
+      dc.observationArr.append(opData2)
+      dc.observationArr.append(opData3)
+      dc.observationArr.append(opData4)
+      dc.observationArr.append(opData5)
+      
+      dc.role = outRole.text!
+      dc.rank = outRank.text!
+      
+      dc.createRecord()
+      dc.createCSV()
     }
-    
-    
-    opData2.actions = action2
-    opData2.notes = notes2
-    if (condition2.isEmpty == false){
-      opData2.conditions = condition2
-    }else{
-      condition2 = Array(repeating: defaultCondition, count: 4)
-      opData2.conditions = condition2
-    }
-    
-    opData3.actions = action3
-    opData3.notes = notes3
-    if (condition3.isEmpty == false){
-      opData3.conditions = condition3
-    }else{
-      condition3 = Array(repeating: defaultCondition, count: 4)
-      opData3.conditions = condition3
-    }
-    
-    opData4.actions = action4
-    opData4.notes = notes4
-    if (condition4.isEmpty == false){
-      opData4.conditions = condition4
-    }else{
-      condition4 = Array(repeating: defaultCondition, count: 4)
-      opData4.conditions = condition4
-    }
-    
-    opData5.actions = action5
-    opData5.notes = notes5
-    if (condition5.isEmpty == false){
-      opData5.conditions = condition5
-    }else{
-      condition5 = Array(repeating: defaultCondition, count: 4)
-      opData5.conditions = condition5
-    }
-    
-    dc.observationArr.append(opData1)
-    dc.observationArr.append(opData2)
-    dc.observationArr.append(opData3)
-    dc.observationArr.append(opData4)
-    dc.observationArr.append(opData5)
-    
-    dc.role = outRole.text!
-    dc.rank = outRank.text!
-    
-    dc.createRecord()
-    dc.createCSV()
-    
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -225,7 +240,6 @@ class RecordsTVC: UITableViewController {
   
   @IBAction func unwindFromRole(_ segue : UIStoryboardSegue){
     outRole.text = dc.outRole
-    outRank.text = dc.outRank
   }
   
   @IBAction func unwindFromRank(_ segue : UIStoryboardSegue){

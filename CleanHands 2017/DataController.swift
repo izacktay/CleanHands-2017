@@ -331,22 +331,11 @@ class DataController {
 //  }
   
   func savedRoles() {
-    let isSaveRoles = NSKeyedArchiver.archiveRootObject(newRoles, toFile: RoleTVC.aURLRoles.path)
-    if isSaveRoles {
-      os_log("Roles successfully saved.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to save roles...", log: OSLog.default, type: .error)
-    }
-    
+    NSKeyedArchiver.archiveRootObject(newRoles, toFile: RoleTVC.aURLRoles.path)
   }
   
   func savedRole() {
-    let isSaveOutRole = NSKeyedArchiver.archiveRootObject(outRole, toFile: RoleTVC.aURLoutRole.path)
-    if isSaveOutRole {
-      os_log("Role successfully saved.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to save role...", log: OSLog.default, type: .error)
-    }
+    NSKeyedArchiver.archiveRootObject(outRole, toFile: RoleTVC.aURLoutRole.path)
     
   }
   
@@ -356,11 +345,7 @@ class DataController {
   
   func loadRoles() -> [String]?  {
     let succ = NSKeyedUnarchiver.unarchiveObject(withFile: RoleTVC.aURLRoles.path) as? [String]
-    if (succ != nil) {
-      os_log("Roles successfully loaded.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to load roles...", log: OSLog.default, type: .error)
-    }
+    
     return succ
   }
   
@@ -369,23 +354,11 @@ class DataController {
   var outRank = ""
   
   func savedRanks() {
-    let isSaveRanks = NSKeyedArchiver.archiveRootObject(newRanks, toFile: RankTVC.aURLRanks.path)
-    if isSaveRanks {
-      os_log("Ranks successfully saved.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to save ranks...", log: OSLog.default, type: .error)
-    }
-    
+    NSKeyedArchiver.archiveRootObject(newRanks, toFile: RankTVC.aURLRanks.path)
   }
   
   func savedRank() {
-    let isSaveOutRank = NSKeyedArchiver.archiveRootObject(outRank, toFile: RankTVC.aURLoutRank.path)
-    if isSaveOutRank {
-      os_log("Role successfully saved.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to save role...", log: OSLog.default, type: .error)
-    }
-    
+    NSKeyedArchiver.archiveRootObject(outRank, toFile: RankTVC.aURLoutRank.path)
   }
   
   
@@ -395,33 +368,20 @@ class DataController {
   
   func loadRanks() -> [String]?  {
     let succ = NSKeyedUnarchiver.unarchiveObject(withFile: RankTVC.aURLRanks.path) as? [String]
-    
-    if (succ != nil) {
-      os_log("Ranks successfully loaded.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to load ranks...", log: OSLog.default, type: .error)
-    }
+
     return succ
   }
   
   
   func loadRole() -> String?  {
     let succ = NSKeyedUnarchiver.unarchiveObject(withFile: RoleTVC.aURLoutRole.path) as? String
-    if (succ != nil) {
-      os_log("Role successfully loaded.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to load role...", log: OSLog.default, type: .error)
-    }
+
     return succ
   }
   
   func loadRank() -> String?  {
     let succ = NSKeyedUnarchiver.unarchiveObject(withFile: RankTVC.aURLoutRank.path) as? String
-    if (succ != nil) {
-      os_log("Rank successfully loaded.", log: OSLog.default, type: .debug)
-    } else {
-      os_log("Failed to load rank...", log: OSLog.default, type: .error)
-    }
+
     return succ
   }
   
