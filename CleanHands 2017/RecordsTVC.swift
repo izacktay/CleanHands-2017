@@ -184,6 +184,7 @@ class RecordsTVC: UITableViewController {
             dc.role = outRole.text!
             dc.rank = outRank.text!
             dc.location = outLoc.text!
+        
             
             dc.createRecord()
             dc.createCSV()
