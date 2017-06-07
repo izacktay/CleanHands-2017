@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M2F-Id-zyj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M2F-Id-zyj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,15 +34,8 @@
                             <outlet property="delegate" destination="A6T-9Z-Ovb" id="lBg-fd-XMS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Locations" id="bDR-wu-WH7">
-                        <barButtonItem key="rightBarButtonItem" title="Email" id="ULD-Tk-0Dd">
-                            <connections>
-                                <action selector="actEmail:" destination="A6T-9Z-Ovb" id="a4f-WF-z5y"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Locations" id="bDR-wu-WH7"/>
                     <connections>
-                        <outlet property="outEmail" destination="ULD-Tk-0Dd" id="Yrh-Fl-tN1"/>
                         <segue destination="6EU-Zy-uHu" kind="unwind" identifier="fromLocation" unwindAction="unwindFromLocation:" id="C7L-Eu-CLH"/>
                     </connections>
                 </tableViewController>
