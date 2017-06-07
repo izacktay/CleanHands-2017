@@ -72,6 +72,8 @@ class RoleTVC: UITableViewController {
       
       if(dc.getRole(index: row) == dc.role){
         cell.accessoryType = .checkmark
+      } else {
+        cell.accessoryType = .none
       }
     } else {
       let role = dc.newRoles[row]
@@ -84,7 +86,8 @@ class RoleTVC: UITableViewController {
         cell.accessoryType = .checkmark
       } else if (dc.newRoles[row] == dc.loadRole()){
         cell.accessoryType = .checkmark
-        
+      } else {
+        cell.accessoryType = .none
       }
     }
     

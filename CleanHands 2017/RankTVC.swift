@@ -27,6 +27,8 @@ class RankTVC: UITableViewController {
       } else {
         dc.loadDefaultRanks()
       }
+      
+      print(#line, dc.outRank)
     }
 
   // MARK: - Table view data source
@@ -71,27 +73,11 @@ class RankTVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "rankCell", for: indexPath)
-//        
-//        let row = indexPath.row
-//        let role = dc.role
-//        let ranks = dc.getRanks(role: role)
-//        
-//        let rank = dc.getRank(rank: ranks, index: row)
-//        if let label = cell.textLabel{
-//            label.text = rank
-//        }
-//
-//        if(rank == dc.rank){
-//            cell.accessoryType = .checkmark
-//        }
-//        
-//        return cell
       
       let cell = tableView.dequeueReusableCell(withIdentifier: "rankCell", for: indexPath)
       
       let row = indexPath.row
-      
+
       if (dc.newRanks.isEmpty){
         let role = dc.role
         let ranks = dc.getRanks(role: role)
@@ -104,6 +90,8 @@ class RankTVC: UITableViewController {
         
         if(dc.getRank(rank: ranks, index: row) == dc.outRank){
           cell.accessoryType = .checkmark
+        } else {
+          cell.accessoryType = .none
         }
         
       } else {
@@ -118,7 +106,12 @@ class RankTVC: UITableViewController {
         
         if(dc.newRanks[row] == dc.outRank){
           cell.accessoryType = .checkmark
+        } else if (dc.newRanks[row] == dc.loadRank()){
+          cell.accessoryType = .checkmark
+        } else {
+          cell.accessoryType = .none
         }
+        
         
       }
       
