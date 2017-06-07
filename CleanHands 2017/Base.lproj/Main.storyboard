@@ -491,7 +491,7 @@
             </objects>
             <point key="canvasLocation" x="4095" y="289"/>
         </scene>
-        <!--Main Menu View Controller-->
+        <!--Clean Hands-->
         <scene sceneID="6bB-pU-d1M">
             <objects>
                 <viewController id="gz0-2X-VPn" customClass="MainMenuViewController" customModule="CleanHands_2017" customModuleProvider="target" sceneMemberID="viewController">
@@ -524,7 +524,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-vA-hlE">
                                 <rect key="frame" x="124" y="392" width="127" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.67991071660000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.65073705448946306" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="View">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -554,7 +554,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="bPj-19-HXF"/>
+                    <navigationItem key="navigationItem" title="Clean Hands" id="bPj-19-HXF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT2-pt-Wgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
