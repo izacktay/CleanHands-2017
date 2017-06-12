@@ -29,12 +29,6 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
     
     //saving the array of boolean of condition survey
     
-    
-    @IBOutlet weak var segAction1: UISegmentedControl!
-    @IBOutlet weak var segAction2: UISegmentedControl!
-    @IBOutlet weak var segAction3: UISegmentedControl!
-    @IBOutlet weak var segAction4: UISegmentedControl!
-    @IBOutlet weak var segAction5: UISegmentedControl!
     var test : String = ""
     
     var action1 : String = ""
@@ -123,16 +117,9 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
         } else {
             //saving segmented control (actions), notes (notes), Conditions (conditions)
             // into one Observation Point data (ops)
-            
-            // get the title of the segments
-            action1 = (segAction1.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction1.selectedSegmentIndex)! : ""
-            action2 = (segAction2.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction2.selectedSegmentIndex)! : ""
-            action3 = (segAction3.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction3.selectedSegmentIndex)! : ""
-            action4 = (segAction4.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction4.selectedSegmentIndex)! : ""
-            action5 = (segAction5.selectedSegmentIndex != UISegmentedControlNoSegment) ? segAction1.titleForSegment(at: segAction5.selectedSegmentIndex)! : ""
+
             
             
-            print(test)
             opData1.actions = action1
             opData1.notes = notes1
             if (condition1.isEmpty == false){
