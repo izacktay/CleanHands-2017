@@ -67,7 +67,10 @@ class DataController {
     func getLocations() -> [String]{
         return Array(locations)
     }
-    
+  
+  
+
+  
     // takes in the role, return the ranks of the role in to an array
     // this method can be used to get the rank count (getRank(role).count)
     // get rank array
@@ -272,28 +275,16 @@ class DataController {
     
     //Dian's Persistence codes
     
-    //Persistence
-    
     //LocationTVC Persistence
     
     var newLocations : [String] = []
     var outLocations = ""
     
     func savedLocations() {
-        let isLocSaved = NSKeyedArchiver.archiveRootObject(newLocations, toFile: LocationTVC.aURLlocations.path)
-        if isLocSaved {
-            os_log("Locations successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save locations...", log: OSLog.default, type: .error)
-        }
+        NSKeyedArchiver.archiveRootObject(newLocations, toFile: LocationTVC.aURLlocations.path)
     }
     func savedLocation() {
-        let isOutLoc = NSKeyedArchiver.archiveRootObject(outLocations, toFile: LocationTVC.aURLOutLoc.path)
-        if isOutLoc {
-            os_log("Location successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save location...", log: OSLog.default, type: .error)
-        }
+        NSKeyedArchiver.archiveRootObject(outLocations, toFile: LocationTVC.aURLOutLoc.path)
     }
     
     
@@ -303,21 +294,11 @@ class DataController {
     
     func loadLocations() -> [String]?  {
         let succ = NSKeyedUnarchiver.unarchiveObject(withFile: LocationTVC.aURLlocations.path) as? [String]
-        if (succ != nil) {
-            os_log("Locations successfully loaded.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to load locations...", log: OSLog.default, type: .error)
-        }
         return succ
     }
     
     func loadLocation() -> String?  {
         let succ = NSKeyedUnarchiver.unarchiveObject(withFile: LocationTVC.aURLOutLoc.path) as? String
-        if (succ != nil) {
-            os_log("Location successfully loaded.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to load location...", log: OSLog.default, type: .error)
-        }
         return succ
     }
     

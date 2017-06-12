@@ -34,30 +34,15 @@ class RoleTVC: UITableViewController {
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
     return 1
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
     return dc.roleCount
   }
   
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
-    //
-    //        let row = indexPath.row
-    //
-    //        let role = dc.getRole(index: row)
-    //        if let label = cell.textLabel{
-    //            label.text = role
-    //        }
-    //
-    //        if(dc.getRole(index: row) == dc.role){
-    //            cell.accessoryType = .checkmark
-    //        }
-    //
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
     
@@ -96,12 +81,6 @@ class RoleTVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let row = indexPath.row
-//    dc.role = dc.getRole(index: row)
-//    dc.rank = "Rank"
-//    
-//    if let nc = self.navigationController{
-//      nc.popViewController(animated: true)
-//    }
     
     if(dc.newRoles.isEmpty){
       dc.role = dc.getRole(index: row)
@@ -120,10 +99,6 @@ class RoleTVC: UITableViewController {
     }
     dc.rank = "Rank"
     
-    
-    //    if let nc = self.navigationController{
-    //      nc.popViewController(animated: true)
-    //    }
     performSegue(withIdentifier: "fromRole", sender: self)
 
   }
