@@ -49,6 +49,13 @@ class NotesVC: UIViewController {
     
     @IBAction func actSave(_ sender: UIBarButtonItem) {
         
+        
+        
+        performSegue(withIdentifier: "unwindNotes", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let rTVC = RecordsTVC()
         
         if (segueIdentifier == "notes1"){
@@ -66,7 +73,6 @@ class NotesVC: UIViewController {
         if let vc = self.navigationController{
             vc.popViewController(animated: true)
         }
-        
     }
     
     

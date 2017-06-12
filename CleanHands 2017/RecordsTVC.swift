@@ -8,13 +8,14 @@
 
 import UIKit
 
-class RecordsTVC: UITableViewController {
+class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let dc = DataController.sharedInstance
     
     @IBOutlet weak var outRole: UILabel!
     @IBOutlet weak var outRank: UILabel!
     @IBOutlet weak var outLoc: UILabel!
+    @IBOutlet weak var outMomentsCV: UICollectionView!
     
     var updatedRole = ""
     var updatedRank = ""
@@ -91,6 +92,9 @@ class RecordsTVC: UITableViewController {
         
         
         defaultCondition.selected = false
+        
+        outMomentsCV.delegate = self
+        outMomentsCV.dataSource = self
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -263,58 +267,65 @@ class RecordsTVC: UITableViewController {
         outLoc.text = dc.outLocations
     }
     
+    @IBAction func unwindFromNotes(_ segue: UIStoryboardSegue){
+        
+    }
     
+    //moments collevtion view
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
-    @IBAction func actAction1(_ sender: UISegmentedControl) {
-        guard switchState == true else{
-            return
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
+                                                      for: indexPath) as! MomentsCollectionViewCell
+        
+        let item = indexPath.item
+        
+        if (item == 0){
+            cell.outLabel.text = "Before"
+        }else{
+            cell.outLabel.text = "The rest"
         }
-        if (sender.selectedSegmentIndex == 2){
-            performSegue(withIdentifier: "notes1", sender: self)
-            print(switchString)
+        
+        return cell
+    }
+    
+    
+    // called to ask if cell should be selected
+    func collectionView(_ collectionView: UICollectionView,
+                        shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // called when cell transitions from deselected to selected
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        print("\(#function) \(indexPath)")
+        
+        if let cell = collectionView.cellForItem(at:indexPath) {
+            cell.backgroundColor = UIColor.blue
         }
         
     }
     
-    
-    @IBAction func actAction2(_ sender: UISegmentedControl) {
-        guard switchState == true else{
-            return
-        }
-        if (sender.selectedSegmentIndex == 2){
-            performSegue(withIdentifier: "notes2", sender: self)
-        }
+    func collectionView(_ collectionView: UICollectionView,
+                        shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        return true
+        
     }
     
-    
-    @IBAction func actAction3(_ sender: UISegmentedControl) {
-        guard switchState == true else{
-            return
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at:indexPath){
+            cell.backgroundColor = UIColor.gray
         }
-        if (sender.selectedSegmentIndex == 2){
-            performSegue(withIdentifier: "notes3", sender: self)
-        }
+        
     }
-    
-    
-    @IBAction func actAction4(_ sender: UISegmentedControl) {
-        guard switchState == true else{
-            return
-        }
-        if (sender.selectedSegmentIndex == 2){
-            performSegue(withIdentifier: "notes4", sender: self)
-        }
-    }
-    
-    @IBAction func actAction5(_ sender: UISegmentedControl) {
-        guard switchState == true else{
-            return
-        }
-        if (sender.selectedSegmentIndex == 2){
-            performSegue(withIdentifier: "notes5", sender: self)
-        }
-    }
-    
+
     
     
 }

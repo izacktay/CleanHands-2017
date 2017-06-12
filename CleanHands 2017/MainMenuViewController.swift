@@ -8,17 +8,46 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+class MainMenuViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    @IBOutlet weak var outStart: UIButton!
+    
+    let transition = CircularTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "records"){
+            let vc = segue.destination as! RecordsTVC
+            vc.transitioningDelegate = self
+            vc.modalPresentationStyle = .custom
+        }
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = outStart.center
+        transition.circleColor = outStart.backgroundColor!
+        
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = outStart.center
+        transition.circleColor = outStart.backgroundColor!
+        
+        return transition
     }
     
 

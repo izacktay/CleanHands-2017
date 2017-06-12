@@ -25,7 +25,7 @@ class ConditionsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        conditionArr =  Array(repeating: false, count: dc.conditionCount )
+        conditionArr =  Array(repeating: false, count: dc.conditionCount)
         selConditionsArr =  Array(repeating: false, count: 4)
         selCondArr = Array(repeating: condData, count: 4)
         print(segueIdentifier)

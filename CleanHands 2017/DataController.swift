@@ -27,12 +27,11 @@ class DataController {
         
         conditions = ["Airborne" : [n95], "Contact" : [glove, gown], "Droplet" : [mask]]
         
-        //        roleAndrank = ["Nurse" : ["Student", "Experienced"], "Doctor" : ["Junior", "Senior"]]
+        //roleAndrank = ["Nurse" : ["sd", "Student", "Experienced"], "Doctor" : ["Junior", "Senior"]]
         
         locations = readArrayPlist(filename: "locations") as! [String]
         
         roleAndrank = readDictionaryPlist(filename: "roleAndrank") as! [String : [String]]
-        
     }
     // need dictionary that stores String : String Array for
     
@@ -40,6 +39,10 @@ class DataController {
     
     
     
+    // get role full text
+    func getRoleFullText(rank: [String]) -> String{
+        return rank[0]
+    }
     
     //get single location
     func getLocation(index:Int) -> String {
@@ -74,7 +77,7 @@ class DataController {
     
     //get single rank
     func getRank(rank: [String], index:Int) -> String {
-        return rank[index]
+        return rank[index+1]
     }
     
     // gets the number of roles to update the table
