@@ -20,7 +20,7 @@ class DataController {
     let mask = ConditionsData(description: "Mask")
     // location array
     var locations : [String] = []
-    var roleAndrank : [String : [String]] = [:]
+    var roleAndrank : [String : [Any]] = [:]
     
     private init() {
         
@@ -31,7 +31,7 @@ class DataController {
         
         locations = readArrayPlist(filename: "locations") as! [String]
         
-        roleAndrank = readDictionaryPlist(filename: "roleAndrank") as! [String : [String]]
+        roleAndrank = readDictionaryPlist(filename: "roleAndrank")!
     }
     // need dictionary that stores String : String Array for
     
@@ -40,8 +40,11 @@ class DataController {
     
     
     // get role full text
-    func getRoleFullText(rank: [String]) -> String{
-        return rank[0]
+    func getRoleFullText(role: String) -> String{
+        if let roleFullText = roleAndrank[role]{
+            return roleFullText[0] as! String
+        }
+        return ""
     }
     
     //get single location
@@ -75,12 +78,16 @@ class DataController {
     // this method can be used to get the rank count (getRank(role).count)
     // get rank array
     func getRanks(role: String) -> [String] {
-        return roleAndrank[role]!
+        
+        if let ranks = roleAndrank[role]{
+            return ranks[1] as! [String]
+        }
+        return []
     }
     
     //get single rank
     func getRank(rank: [String], index:Int) -> String {
-        return rank[index+1]
+        return rank[index]
     }
     
     // gets the number of roles to update the table
@@ -144,13 +151,13 @@ class DataController {
     
     var recordArr : [RecordData] = []
     
-    func readDictionaryPlist(filename:String) -> [String : Any]? {
+    func readDictionaryPlist(filename:String) -> [String : [Any]]? {
         // get the path of the plist file
         // read the plist into memory
         // convert the plist to a [String:Any] dictionary
         guard let path = Bundle.main.path(forResource: filename, ofType: "plist"),
             let data = FileManager.default.contents(atPath: path),
-            let retval = try! PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String : Any] else {
+            let retval = try! PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String : [Any]] else {
                 return nil
         }
         

@@ -4,15 +4,19 @@
 <dict>
 	<key>Nurse</key>
 	<array>
-		<string>nurse full text</string>
-		<string>Student</string>
-		<string>Experienced</string>
+		<string>Nurse full text</string>
+		<array>
+			<string>Student</string>
+			<string>Experienced</string>
+		</array>
 	</array>
 	<key>Doctor</key>
 	<array>
-		<string>doctor full text</string>
-		<string>Junior</string>
-		<string>Senior</string>
+		<string>Doctor full text</string>
+		<array>
+			<string>Junior</string>
+			<string>Senior</string>
+		</array>
 	</array>
 	<key>ENDO</key>
 	<array/>
