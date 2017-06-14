@@ -16,8 +16,7 @@ public class ConditionsData {
     // 
     
     var description : String
-    var selected : Bool = false
-    var notAnswered : Bool = false
+    var items : String = "N/A"
     
     
     init(description : String){

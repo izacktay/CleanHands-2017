@@ -8,14 +8,14 @@
 
 import UIKit
 
-class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class RecordsTVC: UITableViewController {
     
     let dc = DataController.sharedInstance
     
     @IBOutlet weak var outRole: UILabel!
     @IBOutlet weak var outRank: UILabel!
     @IBOutlet weak var outLoc: UILabel!
-    @IBOutlet weak var outMomentsCV: UICollectionView!
+    @IBOutlet weak var outMoments: UILabel!
     
     var updatedRole = ""
     var updatedRank = ""
@@ -84,12 +84,6 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
             loadDefaultLoc()
         }
         
-        
-        defaultCondition.selected = false
-        
-        outMomentsCV.delegate = self
-        outMomentsCV.dataSource = self
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         print(updatedRank)
@@ -117,9 +111,10 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
         } else {
             //saving segmented control (actions), notes (notes), Conditions (conditions)
             // into one Observation Point data (ops)
-
             
             
+            
+            print(test)
             opData1.actions = action1
             opData1.notes = notes1
             if (condition1.isEmpty == false){
@@ -224,22 +219,27 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
     
     private func loadDefaultRole(){
         outRole.text = dc.role
+        outRole.textColor = UIColor.blue
     }
     
     private func loadDefaultRank(){
         outRank.text = dc.rank
+        outRank.textColor = UIColor.blue
     }
     
     private func loadDefaultLoc(){
         outLoc.text = dc.location
+        outLoc.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromRole(_ segue : UIStoryboardSegue){
         outRole.text = dc.outRole
+        outRole.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromRank(_ segue : UIStoryboardSegue){
         outRank.text = dc.outRank
+        outRank.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromConditions(_ segue: UIStoryboardSegue){
@@ -252,67 +252,38 @@ class RecordsTVC: UITableViewController, UICollectionViewDelegate, UICollectionV
     
     @IBAction func unwindFromLocation(_ segue: UIStoryboardSegue){
         outLoc.text = dc.outLocations
+        outLoc.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromNotes(_ segue: UIStoryboardSegue){
         
     }
     
-    //moments collevtion view
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    @IBAction func unwindFromMoments(_ segue: UIStoryboardSegue){
+        outMoments.text = dc.moments
+        outMoments.textColor = UIColor.blue
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
-                                                      for: indexPath) as! MomentsCollectionViewCell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
         
-        let item = indexPath.item
-        
-        if (item == 0){
-            cell.outLabel.text = "Before"
-        }else{
-            cell.outLabel.text = "The rest"
+        if (section == 2){
+            if let cell = tableView.cellForRow(at: indexPath){
+                cell.accessoryType = .checkmark
+            }
+            
         }
-        
-        return cell
     }
     
-    
-    // called to ask if cell should be selected
-    func collectionView(_ collectionView: UICollectionView,
-                        shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    // called when cell transitions from deselected to selected
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        print("\(#function) \(indexPath)")
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
         
-        if let cell = collectionView.cellForItem(at:indexPath) {
-            cell.backgroundColor = UIColor.blue
+        if (section == 2){
+            if let cell = tableView.cellForRow(at: indexPath){
+                cell.accessoryType = .none
+            }
         }
-        
     }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        return true
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at:indexPath){
-            cell.backgroundColor = UIColor.gray
-        }
-        
-    }
-
     
     
 }

@@ -46,7 +46,7 @@ class ConditionsTVC: UITableViewController {
         }else {
             if (conditionArr[section - 1] == true){
                 let condition = dc.getCondition(index: section - 1)
-                return dc.conditionSurveyCount(type: condition)
+                return dc.conditionItemCount(type: condition)
             }
         }
         return 0
@@ -56,40 +56,47 @@ class ConditionsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
         let section = indexPath.section
         
+        
         if (section == 0){
-            
             let row = indexPath.row
+            let cell = tableView.dequeueReusableCell(withIdentifier: "conditions", for: indexPath)
             let condition = dc.getCondition(index: row)
             if let label = cell.textLabel{
                 label.text = condition
             }
             
-            
+            return cell
             
         } else {
             
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "items", for: indexPath) as! CustomRecordsTVCCell
+            
             if (conditionArr[section - 1] == true){
+                
+                
                 let row = indexPath.row
                 let condition = dc.getCondition(index: section - 1)
-                let conditionSurveys = dc.getConditionSurveys(condition: condition)
+                let conditionSurveys = dc.getConditionItems(condition: condition)
                 
-                let conditionSurvey = dc.getConditionSurvey(conditionSurvey: conditionSurveys, index: row)
-                if let label = cell.textLabel{
-                    label.text = conditionSurvey
-                }
-            }else{
-                if let label = cell.textLabel{
-                    label.text = ""
-                }
+                let conditionSurvey = dc.getConditionItem(conditionSurvey: conditionSurveys, index: row)
+                cell.outLabel.text = conditionSurvey
+                
             }
+            return cell
         }
         
         
-        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        if (indexPath == [1,0] || indexPath == [2,0] || indexPath == [2,1] || indexPath == [3,0]){
+            return nil
+        }
+        return indexPath
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -100,6 +107,8 @@ class ConditionsTVC: UITableViewController {
         // ensure
         
         let section = indexPath.section
+        let cell = tableView.dequeueReusableCell(withIdentifier: "items", for: indexPath) as! CustomRecordsTVCCell
+        
         
         if (section == 0){
             
@@ -128,49 +137,64 @@ class ConditionsTVC: UITableViewController {
                 }
                 
             }
-            tableView.reloadSections([1, 2, 3], with: .automatic)
             
-        }
-        
-        // will set the selCondtionsArr to true or false, to determine whether its selected <--
-        
-        if (section == 1){
-            
-            if(selConditionsArr[0] == false){
-                selConditionsArr[0] = true
-                dc.n95.selected = true
-                selCondArr[0] = dc.n95
-            }
-        }
-        
-        if (section == 2){
-            let row = indexPath.row
-            
-            if (row == 0){
-                if (selConditionsArr[1] == false){
-                    selConditionsArr[1] = true
-                    dc.glove.selected = true
-                    selCondArr[1] = dc.glove
-                }
-            }else {
-                if (selConditionsArr[2] == false){
-                    selConditionsArr[2] = true
-                    dc.gown.selected = true
-                    selCondArr[2] = dc.gown
-                }
+            if let cell = tableView.cellForRow(at: indexPath){
+                cell.accessoryType = .checkmark
             }
             
         }
-        if (section == 3){
-            
-            if(selConditionsArr[3] == false){
-                selConditionsArr[3] = true
-                dc.mask.selected = true
-                selCondArr[3] = dc.mask
-            }
-        }
-        // -->
-        print(selConditionsArr)
+        
+//        // will set the selCondtionsArr to true or false, to determine whether its selected <--
+//        
+//        if (section == 1){
+//            
+//            if(selConditionsArr[0] == false){
+//                selConditionsArr[0] = true
+//                if let segmentItem = cell.outSegmentControl{
+//                    // set the yes/NA/no
+//                    dc.n95.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+//                }
+//                selCondArr[0] = dc.n95
+//            }
+//        }
+//        
+//        if (section == 2){
+//            let row = indexPath.row
+//            
+//            if (row == 0){
+//                if (selConditionsArr[1] == false){
+//                    selConditionsArr[1] = true
+//                    if let segmentItem = cell.outSegmentControl{
+//                        // set the yes/NA/no
+//                        dc.glove.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+//                    }
+//                    selCondArr[1] = dc.glove
+//                }
+//            }else {
+//                if (selConditionsArr[2] == false){
+//                    selConditionsArr[2] = true
+//                    if let segmentItem = cell.outSegmentControl{
+//                        // set the yes/NA/no
+//                        dc.gown.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+//                    }
+//                    selCondArr[2] = dc.gown
+//                }
+//            }
+//            
+//        }
+//        if (section == 3){
+//            
+//            if(selConditionsArr[3] == false){
+//                selConditionsArr[3] = true
+//                if let segmentItem = cell.outSegmentControl{
+//                    // set the yes/NA/no
+//                    dc.mask.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+//                }
+//                selCondArr[3] = dc.mask
+//            }
+//        }
+//        // -->
+//        print(selConditionsArr)
         
         
     }
@@ -207,12 +231,14 @@ class ConditionsTVC: UITableViewController {
                 
             }
             
+            if let cell = tableView.cellForRow(at: indexPath){
+                cell.accessoryType = .none
+            }
+            
             
         }
         // same concept as selecting the row, but now its deselecting. will set it to false
         if (section == 1){
-            
-            //
             
             if(selConditionsArr[0] == true){
                 selConditionsArr[0] = false

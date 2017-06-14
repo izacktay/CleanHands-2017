@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		840799CF1EEE748C00679037 /* testplist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840799CE1EEE748C00679037 /* testplist.plist */; };
+		840799D11EEE84BB00679037 /* CustomRecordsTVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */; };
 		84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092AF01EB0571A00ABAED7 /* AppDelegate.swift */; };
 		84092AF61EB0571A00ABAED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF41EB0571A00ABAED7 /* Main.storyboard */; };
 		84092AF81EB0571A00ABAED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF71EB0571A00ABAED7 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */; };
 		840B6B571EEBAACC000A78A2 /* MomentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B6B561EEBAACC000A78A2 /* MomentsCollectionViewCell.swift */; };
 		840BC5DA1EEAD21400896FC6 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BC5D91EEAD21400896FC6 /* CircularTransition.swift */; };
+		8414565A1EEFC86C0081CE08 /* MomentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841456591EEFC86C0081CE08 /* MomentsTVC.swift */; };
 		841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54941EC06F9B0072F776 /* ConditionsData.swift */; };
 		841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E54961EC07C370072F776 /* ObservationPointData.swift */; };
 		844454261EC17FCC00506083 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844454251EC17FCC00506083 /* NotesVC.swift */; };
@@ -37,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		840799CE1EEE748C00679037 /* testplist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testplist.plist; sourceTree = "<group>"; };
+		840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecordsTVCCell.swift; sourceTree = "<group>"; };
 		84092AED1EB0571A00ABAED7 /* CleanHands 2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CleanHands 2017.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84092AF01EB0571A00ABAED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84092AF51EB0571A00ABAED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		84092B2C1EB0D8CB00ABAED7 /* LocationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
 		840B6B561EEBAACC000A78A2 /* MomentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		840BC5D91EEAD21400896FC6 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		841456591EEFC86C0081CE08 /* MomentsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsTVC.swift; sourceTree = "<group>"; };
 		841E54941EC06F9B0072F776 /* ConditionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsData.swift; sourceTree = "<group>"; };
 		841E54961EC07C370072F776 /* ObservationPointData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationPointData.swift; sourceTree = "<group>"; };
 		844454251EC17FCC00506083 /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				84A84E2E1EE7DF270082C27C /* roleAndrank.plist */,
 				840799CE1EEE748C00679037 /* testplist.plist */,
 				840B6B561EEBAACC000A78A2 /* MomentsCollectionViewCell.swift */,
+				840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */,
+				841456591EEFC86C0081CE08 /* MomentsTVC.swift */,
 			);
 			path = "CleanHands 2017";
 			sourceTree = "<group>";
@@ -235,8 +241,10 @@
 				84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */,
 				845165661EB46D0900A72524 /* RankTVC.swift in Sources */,
 				840BC5DA1EEAD21400896FC6 /* CircularTransition.swift in Sources */,
+				840799D11EEE84BB00679037 /* CustomRecordsTVCCell.swift in Sources */,
 				841E54951EC06F9B0072F776 /* ConditionsData.swift in Sources */,
 				84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */,
+				8414565A1EEFC86C0081CE08 /* MomentsTVC.swift in Sources */,
 				8451655C1EB4489500A72524 /* RoleTVC.swift in Sources */,
 				849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */,
 			);

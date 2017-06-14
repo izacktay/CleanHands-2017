@@ -70,10 +70,10 @@ class DataController {
     func getLocations() -> [String]{
         return Array(locations)
     }
-  
-  
-
-  
+    
+    
+    
+    
     // takes in the role, return the ranks of the role in to an array
     // this method can be used to get the rank count (getRank(role).count)
     // get rank array
@@ -99,7 +99,10 @@ class DataController {
     var role : String = "Role"
     var rank : String = "Rank"
     var location : String = "Location"
-    
+    var moments : String = "Moments"
+    // saving the title and notes
+    var notesTitle : String = ""
+    var notesText : String = ""
     
     //second level survey dictionary
     // condition : conditionSurvey
@@ -111,7 +114,7 @@ class DataController {
         return Array(conditions.keys)[index]
     }
     
-    func getConditionSurveys (condition : String) -> [String]{
+    func getConditionItems (condition : String) -> [String]{
         
         var stringArr : [String] = []
         if let array = conditions[condition]{
@@ -123,11 +126,11 @@ class DataController {
     }
     
     // delete this, replace with condition[row]
-    func getConditionSurvey(conditionSurvey : [String], index : Int) -> String {
+    func getConditionItem(conditionSurvey : [String], index : Int) -> String {
         return conditionSurvey[index]
     }
     
-    func conditionSurveyCount (type : String) -> Int{
+    func conditionItemCount (type : String) -> Int{
         if let array = conditions[type]{
             return array.count
         }
@@ -137,11 +140,6 @@ class DataController {
     var conditionCount : Int {
         return conditions.count
     }
-    
-    
-    // saving the title and notes
-    var notesTitle : String = ""
-    var notesText : String = ""
     
     
     // stores the 5 observation points in order
@@ -206,77 +204,23 @@ class DataController {
     
     func createRecord() -> Void {
         
-        var selCond = 4
+        let record1 = RecordData()
+        //role, location, rank
+        record1.role = role
+        record1.location = location
+        record1.rank = rank
         
-        for i in 0...4{
-            
-            let record1 = RecordData()
-            //role, location, rank
-            record1.role = role
-            record1.location = location
-            record1.rank = rank
-            
-            let complianceAction = observationArr[i].actions
-            let notes = observationArr[i].notes
-            let cond = observationArr[i].conditions
-            
-            // if nothing has been selected
-            for c in cond{
-                if (c.selected == false){
-                    selCond -= 1
-                }
-                
-            }
-            
-            if (cond[0].description == "N95"){
-                print("n95")
-            }
-            
-            //saving the conditions.
-            if (cond[0].selected == false){
-                record1.n95Mask = "N/A"
-            }else{
-                record1.n95Mask = "True"
-            }
-            
-            if (cond[1].selected == false){
-                record1.glove = "N/A"
-            }else{
-                record1.glove = "True"
-            }
-            
-            if (cond[2].selected == false){
-                record1.gown = "N/A"
-            }else{
-                record1.gown = "True"
-            }
-            
-            if (cond[3].selected == false){
-                record1.surgicalMask = "N/A"
-            }else{
-                record1.surgicalMask = "True"
-            }
-            
-            //observation name
-            if (i == 0){
-                record1.observationMoment = "Before Contact"
-            }else if (i == 1){
-                record1.observationMoment = "After Contact"
-            }else if (i == 2){
-                record1.observationMoment = "Before Exposure"
-            }else if (i == 3){
-                record1.observationMoment = "After Exposure"
-            }else if (i == 4){
-                record1.observationMoment = "After Environment"
-            }
-            
-            //compliance action
-            record1.complianceAction = complianceAction
-            record1.note = notes
-            record1.date = Date()
-            
-            recordArr.append(record1)
-        }
+        
+        //saving the conditions, glove gown...
+        
+        //observation name
+        
+        //compliance action
+
+        record1.date = Date()
+        
+        recordArr.append(record1)
+        
         
     }
     
