@@ -12,6 +12,7 @@ public class ObservationPointData {
     
     var notes : String = ""
     var actions : String = ""
+    var momentName : String = ""
     var conditions : [ConditionsData] = []
     
     

@@ -16,6 +16,8 @@ class RecordsTVC: UITableViewController {
     @IBOutlet weak var outRank: UILabel!
     @IBOutlet weak var outLoc: UILabel!
     @IBOutlet weak var outMoments: UILabel!
+    @IBOutlet weak var outConditions: UILabel!
+    @IBOutlet weak var outNotes: UILabel!
     
     var updatedRole = ""
     var updatedRank = ""
@@ -26,38 +28,21 @@ class RecordsTVC: UITableViewController {
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
-    
     //saving the array of boolean of condition survey
     
     var test : String = ""
     
-    var action1 : String = ""
-    var action2 : String = ""
-    var action3 : String = ""
-    var action4 : String = ""
-    var action5 : String = ""
+    var action : String = ""
     
-    var notes1 : String = ""
-    var notes2 : String = ""
-    var notes3 : String = ""
-    var notes4 : String = ""
-    var notes5 : String = ""
+    var notes : String = ""
     
     var defaultCondition = ConditionsData(description: "")
     
     
     // set everything to false, so it wont have out of range index. values will always be passed
-    var condition1 : [ConditionsData] = []
-    var condition2 : [ConditionsData] = []
-    var condition3 : [ConditionsData] = []
-    var condition4 : [ConditionsData] = []
-    var condition5 : [ConditionsData] = []
+    var condition : [ConditionsData] = []
     
-    let opData1 = ObservationPointData()
-    let opData2 = ObservationPointData()
-    let opData3 = ObservationPointData()
-    let opData4 = ObservationPointData()
-    let opData5 = ObservationPointData()
+    let opData = ObservationPointData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +72,7 @@ class RecordsTVC: UITableViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         print(updatedRank)
-        print(notes1)
+        print(notes)
     }
     
     // saving records as a single object to records class
@@ -115,105 +100,33 @@ class RecordsTVC: UITableViewController {
             
             
             print(test)
-            opData1.actions = action1
-            opData1.notes = notes1
-            if (condition1.isEmpty == false){
-                opData1.conditions = condition1
+            //for the action, get the text label of the cell: wash/rub/no
+            
+            if (condition.isEmpty == false){
+                opData.conditions = condition
             }else{
-                condition1 = Array(repeating: defaultCondition, count: 4)
-                opData1.conditions = condition1
+                condition = Array(repeating: defaultCondition, count: 4)
+                opData.conditions = condition
             }
+            opData.actions = action
+            opData.notes = notes
+            dc.observationPoint = opData
             
-            
-            opData2.actions = action2
-            opData2.notes = notes2
-            if (condition2.isEmpty == false){
-                opData2.conditions = condition2
-            }else{
-                condition2 = Array(repeating: defaultCondition, count: 4)
-                opData2.conditions = condition2
-            }
-            
-            opData3.actions = action3
-            opData3.notes = notes3
-            if (condition3.isEmpty == false){
-                opData3.conditions = condition3
-            }else{
-                condition3 = Array(repeating: defaultCondition, count: 4)
-                opData3.conditions = condition3
-            }
-            
-            opData4.actions = action4
-            opData4.notes = notes4
-            if (condition4.isEmpty == false){
-                opData4.conditions = condition4
-            }else{
-                condition4 = Array(repeating: defaultCondition, count: 4)
-                opData4.conditions = condition4
-            }
-            
-            opData5.actions = action5
-            opData5.notes = notes5
-            if (condition5.isEmpty == false){
-                opData5.conditions = condition5
-            }else{
-                condition5 = Array(repeating: defaultCondition, count: 4)
-                opData5.conditions = condition5
-            }
-            
-            dc.observationArr.append(opData1)
-            dc.observationArr.append(opData2)
-            dc.observationArr.append(opData3)
-            dc.observationArr.append(opData4)
-            dc.observationArr.append(opData5)
-            
+            dc.momentName = outMoments.text!
             dc.role = outRole.text!
             dc.rank = outRank.text!
             dc.location = outLoc.text!
+            dc.roleFullText = dc.getRoleFullText(role: dc.role)
+            
         
             
             dc.createRecord()
-            dc.createCSV()
+
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // conditions
-        if(segue.identifier == "sls1"){
-            let sls = segue.destination as! ConditionsTVC
-            sls.segueIdentifier = "sls1"
-        }else if(segue.identifier == "sls2"){
-            let sls = segue.destination as! ConditionsTVC
-            sls.segueIdentifier = "sls2"
-        }else if(segue.identifier == "sls3"){
-            let sls = segue.destination as! ConditionsTVC
-            sls.segueIdentifier = "sls3"
-        }else if(segue.identifier == "sls4"){
-            let sls = segue.destination as! ConditionsTVC
-            sls.segueIdentifier = "sls4"
-        }else if(segue.identifier == "sls5"){
-            let sls = segue.destination as! ConditionsTVC
-            sls.segueIdentifier = "sls5"
-        }
-        
-        // notes
-        if (segue.identifier == "notes1"){
-            let notes = segue.destination as! NotesVC
-            notes.segueIdentifier = "notes1"
-        }else if (segue.identifier == "notes2"){
-            let notes = segue.destination as! NotesVC
-            notes.segueIdentifier = "notes2"
-        }else if (segue.identifier == "notes3"){
-            let notes = segue.destination as! NotesVC
-            notes.segueIdentifier = "notes3"
-        }else if (segue.identifier == "notes4"){
-            let notes = segue.destination as! NotesVC
-            notes.segueIdentifier = "notes4"
-        }else if (segue.identifier == "notes5"){
-            let notes = segue.destination as! NotesVC
-            notes.segueIdentifier = "notes5"
-        }
         
     }
     
@@ -243,11 +156,7 @@ class RecordsTVC: UITableViewController {
     }
     
     @IBAction func unwindFromConditions(_ segue: UIStoryboardSegue){
-        
-    }
-    
-    @IBAction func unwindFromSettings(_ segue: UIStoryboardSegue){
-        
+        outConditions.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromLocation(_ segue: UIStoryboardSegue){
@@ -256,11 +165,11 @@ class RecordsTVC: UITableViewController {
     }
     
     @IBAction func unwindFromNotes(_ segue: UIStoryboardSegue){
-        
+        outNotes.textColor = UIColor.blue
     }
     
     @IBAction func unwindFromMoments(_ segue: UIStoryboardSegue){
-        outMoments.text = dc.moments
+        outMoments.text = dc.momentName
         outMoments.textColor = UIColor.blue
     }
     

@@ -36,9 +36,6 @@ class DataController {
     // need dictionary that stores String : String Array for
     
     
-    
-    
-    
     // get role full text
     func getRoleFullText(role: String) -> String{
         if let roleFullText = roleAndrank[role]{
@@ -97,9 +94,10 @@ class DataController {
     
     // updated every time cell from RoleTVC is selected. updated with the role name.
     var role : String = "Role"
+    var roleFullText : String = "Role Full Text"
     var rank : String = "Rank"
     var location : String = "Location"
-    var moments : String = "Moments"
+    var momentName : String = "Moments"
     // saving the title and notes
     var notesTitle : String = ""
     var notesText : String = ""
@@ -143,7 +141,7 @@ class DataController {
     
     
     // stores the 5 observation points in order
-    var observationArr : [ObservationPointData] = []
+    var observationPoint = ObservationPointData()
     
     //record
     
@@ -187,6 +185,8 @@ class DataController {
         let path = NSURL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(fileName)
         var csvText = "Date,Location,Job Role,Rank,5 moments,Action,Note,N95,Glove,Gown,Mask\n"
         
+        //month/year, time, location, job role, job role full text, rank, staff category, 5 moments, compliance, no of compliance, no of opportunity, note, glove, gown, sur mask, n95, remarks
+        
         for record in recordArr {
             let newLine = "\(record.date),\(record.location),\(record.role),\(record.rank),\(record.observationMoment),\(record.complianceAction),\(record.note),\(record.n95Mask),\(record.glove),\(record.gown),\(record.surgicalMask)\n"
             csvText.append(newLine)
@@ -212,10 +212,13 @@ class DataController {
         
         
         //saving the conditions, glove gown...
+        let notes = observationPoint.notes
+        let action = observationPoint.actions
+        let conitions = observationPoint.conditions
         
-        //observation name
+        //moment name
         
-        //compliance action
+        
 
         record1.date = Date()
         

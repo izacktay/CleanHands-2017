@@ -12,12 +12,14 @@ class RecordData {
     
     //basically everything in the csv
     // 5 observation point data
+    //month/year, time, location, job role, job role full text, rank, staff category, 5 moments, compliance, no of compliance, no of opportunity, note, glove, gown, sur mask, n95, remarks
     
     var observationPoint : [ObservationPointData] = []
     
     var date : Date = Date()
     var location : String = ""
     var role : String = ""
+    var roleFull : String = ""
     var rank : String = ""
     var complianceAction : String = ""
     

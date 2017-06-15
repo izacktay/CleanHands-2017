@@ -56,23 +56,8 @@ class NotesVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let rTVC = RecordsTVC()
         
-        if (segueIdentifier == "notes1"){
-            rTVC.notes1 = outTVNotes.text!
-        }else if (segueIdentifier == "notes2"){
-            rTVC.notes2 = outTVNotes.text!
-        }else if (segueIdentifier == "notes3"){
-            rTVC.notes3 = outTVNotes.text!
-        }else if (segueIdentifier == "notes4"){
-            rTVC.notes4 = outTVNotes.text!
-        }else if (segueIdentifier == "notes5"){
-            rTVC.notes5 = outTVNotes.text!
-        }
         
-        if let vc = self.navigationController{
-            vc.popViewController(animated: true)
-        }
     }
     
     

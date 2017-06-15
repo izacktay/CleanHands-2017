@@ -54,7 +54,7 @@ class MomentsTVC: UITableViewController {
             moments = "After Environment"
         }
         
-        dc.moments = moments
+        dc.momentName = moments
         performSegue(withIdentifier: "fromMoments", sender: self)
         
     }

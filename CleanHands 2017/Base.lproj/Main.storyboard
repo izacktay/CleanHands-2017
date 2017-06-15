@@ -370,8 +370,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="outConditions" destination="aKb-Ip-HhF" id="eWA-Pg-rrf"/>
                         <outlet property="outLoc" destination="18p-rg-Xuv" id="GOL-ft-Rwh"/>
                         <outlet property="outMoments" destination="eIX-rL-vVz" id="eeD-7S-rEA"/>
+                        <outlet property="outNotes" destination="BlX-OI-gB0" id="sli-Xh-YBb"/>
                         <outlet property="outRank" destination="92t-ch-yJQ" id="cPf-Ep-pma"/>
                         <outlet property="outRole" destination="ZWa-GN-OFc" id="gaM-rq-5ig"/>
                     </connections>

@@ -107,9 +107,6 @@ class ConditionsTVC: UITableViewController {
         // ensure
         
         let section = indexPath.section
-        let cell = tableView.dequeueReusableCell(withIdentifier: "items", for: indexPath) as! CustomRecordsTVCCell
-        
-        
         if (section == 0){
             
             tableView.allowsMultipleSelection = true
@@ -144,64 +141,10 @@ class ConditionsTVC: UITableViewController {
             
         }
         
-//        // will set the selCondtionsArr to true or false, to determine whether its selected <--
-//        
-//        if (section == 1){
-//            
-//            if(selConditionsArr[0] == false){
-//                selConditionsArr[0] = true
-//                if let segmentItem = cell.outSegmentControl{
-//                    // set the yes/NA/no
-//                    dc.n95.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-//                }
-//                selCondArr[0] = dc.n95
-//            }
-//        }
-//        
-//        if (section == 2){
-//            let row = indexPath.row
-//            
-//            if (row == 0){
-//                if (selConditionsArr[1] == false){
-//                    selConditionsArr[1] = true
-//                    if let segmentItem = cell.outSegmentControl{
-//                        // set the yes/NA/no
-//                        dc.glove.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-//                    }
-//                    selCondArr[1] = dc.glove
-//                }
-//            }else {
-//                if (selConditionsArr[2] == false){
-//                    selConditionsArr[2] = true
-//                    if let segmentItem = cell.outSegmentControl{
-//                        // set the yes/NA/no
-//                        dc.gown.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-//                    }
-//                    selCondArr[2] = dc.gown
-//                }
-//            }
-//            
-//        }
-//        if (section == 3){
-//            
-//            if(selConditionsArr[3] == false){
-//                selConditionsArr[3] = true
-//                if let segmentItem = cell.outSegmentControl{
-//                    // set the yes/NA/no
-//                    dc.mask.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-//                }
-//                selCondArr[3] = dc.mask
-//            }
-//        }
-//        // -->
-//        print(selConditionsArr)
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        tableView.allowsMultipleSelection = true
         let section = indexPath.section
         
         
@@ -237,39 +180,10 @@ class ConditionsTVC: UITableViewController {
             
             
         }
-        // same concept as selecting the row, but now its deselecting. will set it to false
-        if (section == 1){
-            
-            if(selConditionsArr[0] == true){
-                selConditionsArr[0] = false
-            }
-        }
-        
-        if (section == 2){
-            let row = indexPath.row
-            
-            if (row == 0){
-                if (selConditionsArr[1] == true){
-                    selConditionsArr[1] = false
-                }
-            }else {
-                if (selConditionsArr[2] == true){
-                    selConditionsArr[2] = false
-                }
-            }
-            
-        }
-        if (section == 3){
-            
-            if(selConditionsArr[3] == true){
-                selConditionsArr[3] = false
-            }
-        }
-        
-        print(selConditionsArr)
-        
         
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -295,7 +209,7 @@ class ConditionsTVC: UITableViewController {
         
         let title = "Confirm?"
         
-        let message = "N95: \(selConditionsArr[0]) \n Glove: \(selConditionsArr[1]) \n Gown: \(selConditionsArr[2]) \n Mask: \(selConditionsArr[3])"
+        let message = ""
         let alert = UIAlertController(title: title,
                                       message: message, preferredStyle:UIAlertControllerStyle.alert)
         
@@ -317,24 +231,24 @@ class ConditionsTVC: UITableViewController {
         
         performSegue(withIdentifier: "unwindCondition", sender: self)
         
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        passAnswersAt(indexPath: [1,0])
+        passAnswersAt(indexPath: [2,0])
+        passAnswersAt(indexPath: [2,1])
+        passAnswersAt(indexPath: [3,0])
+        
+        selCondArr[0] = dc.n95
+        selCondArr[1] = dc.glove
+        selCondArr[2] = dc.gown
+        selCondArr[3] = dc.mask
+
         let rTVC = segue.destination as! RecordsTVC
         // assign the selCondtionsArr to the BooleanArr array list in ObservationsTVC
-        if (segueIdentifier == "sls1"){
-            rTVC.condition1 = selCondArr
-            rTVC.test = "test test"
-        }else if (segueIdentifier == "sls2"){
-            rTVC.condition2 = selCondArr
-        }else if (segueIdentifier == "sls3"){
-            rTVC.condition3 = selCondArr
-        }else if (segueIdentifier == "sls4"){
-            rTVC.condition4 = selCondArr
-        }else if (segueIdentifier == "sls5"){
-            rTVC.condition5 = selCondArr
-        }
+        rTVC.condition = selCondArr
+        
     }
     
     
@@ -343,6 +257,23 @@ class ConditionsTVC: UITableViewController {
     
     func cancelAct (_ alert : UIAlertAction){
         
+    }
+    
+    
+    func passAnswersAt(indexPath: IndexPath){
+        let cell = tableView.cellForRow(at: indexPath) as! CustomRecordsTVCCell
+        if let segmentItem = cell.outSegmentControl{
+            // set the yes/NA/no
+            if (indexPath == [1,0]){
+                dc.n95.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+            }else if (indexPath == [2,0]){
+                dc.glove.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+            }else if (indexPath == [2,1]){
+                dc.gown.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+            }else if (indexPath == [3,0]){
+                dc.mask.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+            }
+        }
     }
     
     
