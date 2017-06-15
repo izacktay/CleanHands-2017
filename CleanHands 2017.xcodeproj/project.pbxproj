@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		840799CF1EEE748C00679037 /* testplist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840799CE1EEE748C00679037 /* testplist.plist */; };
 		840799D11EEE84BB00679037 /* CustomRecordsTVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */; };
+		84083D471EF297F80074DEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84083D461EF297F80074DEA9 /* Main.storyboard */; };
 		84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092AF01EB0571A00ABAED7 /* AppDelegate.swift */; };
-		84092AF61EB0571A00ABAED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF41EB0571A00ABAED7 /* Main.storyboard */; };
 		84092AF81EB0571A00ABAED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF71EB0571A00ABAED7 /* Assets.xcassets */; };
 		84092AFB1EB0571A00ABAED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */; };
 		84092B051EB0579000ABAED7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092B041EB0579000ABAED7 /* DataController.swift */; };
@@ -40,9 +40,9 @@
 /* Begin PBXFileReference section */
 		840799CE1EEE748C00679037 /* testplist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testplist.plist; sourceTree = "<group>"; };
 		840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecordsTVCCell.swift; sourceTree = "<group>"; };
+		84083D461EF297F80074DEA9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84092AED1EB0571A00ABAED7 /* CleanHands 2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CleanHands 2017.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84092AF01EB0571A00ABAED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84092AF51EB0571A00ABAED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84092AF71EB0571A00ABAED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84092AFA1EB0571A00ABAED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84092AFC1EB0571A00ABAED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 			children = (
 				840723231ED048470088362A /* New Group */,
 				84092AF01EB0571A00ABAED7 /* AppDelegate.swift */,
-				84092AF41EB0571A00ABAED7 /* Main.storyboard */,
 				84092AF71EB0571A00ABAED7 /* Assets.xcassets */,
+				84083D461EF297F80074DEA9 /* Main.storyboard */,
 				840BC5D91EEAD21400896FC6 /* CircularTransition.swift */,
 				84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */,
 				84092AFC1EB0571A00ABAED7 /* Info.plist */,
@@ -213,8 +213,8 @@
 				84092AFB1EB0571A00ABAED7 /* LaunchScreen.storyboard in Resources */,
 				84A84E2D1EE7DCE70082C27C /* locations.plist in Resources */,
 				84092AF81EB0571A00ABAED7 /* Assets.xcassets in Resources */,
+				84083D471EF297F80074DEA9 /* Main.storyboard in Resources */,
 				84A84E2F1EE7DF270082C27C /* roleAndrank.plist in Resources */,
-				84092AF61EB0571A00ABAED7 /* Main.storyboard in Resources */,
 				840799CF1EEE748C00679037 /* testplist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +253,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		84092AF41EB0571A00ABAED7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84092AF51EB0571A00ABAED7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84092AF91EB0571A00ABAED7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

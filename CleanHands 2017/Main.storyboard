@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,8 +70,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="xlL-5S-9qB"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18p-rg-Xuv">
-                                                    <rect key="frame" x="297.5" y="11" width="69.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18p-rg-Xuv">
+                                                    <rect key="frame" x="207" y="11" width="160" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -86,11 +86,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="18p-rg-Xuv" secondAttribute="bottom" constant="3.5" id="KNg-B3-Hiw"/>
                                                 <constraint firstItem="Guc-Cj-QZM" firstAttribute="top" secondItem="OtL-l1-hkl" secondAttribute="top" constant="8" id="XCn-dT-0Bp"/>
                                                 <constraint firstItem="Guc-Cj-QZM" firstAttribute="leading" secondItem="OtL-l1-hkl" secondAttribute="leading" constant="8" id="adb-fq-POF"/>
-                                                <constraint firstItem="18p-rg-Xuv" firstAttribute="top" secondItem="OtL-l1-hkl" secondAttribute="topMargin" constant="3" id="ged-a1-9fk"/>
-                                                <constraint firstItem="18p-rg-Xuv" firstAttribute="trailing" secondItem="OtL-l1-hkl" secondAttribute="trailingMargin" id="ixB-oz-119"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -120,8 +117,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-GN-OFc">
-                                                    <rect key="frame" x="333.5" y="11" width="33.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Role" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-GN-OFc">
+                                                    <rect key="frame" x="211" y="11" width="156" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -129,10 +127,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Hh8-of-gEw" firstAttribute="leading" secondItem="uWr-U1-1CU" secondAttribute="leading" constant="8" id="6h3-10-wNA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZWa-GN-OFc" secondAttribute="bottom" constant="3.5" id="FjT-0j-O5P"/>
                                                 <constraint firstItem="Hh8-of-gEw" firstAttribute="top" secondItem="uWr-U1-1CU" secondAttribute="top" constant="8" id="OXb-QX-oms"/>
-                                                <constraint firstItem="ZWa-GN-OFc" firstAttribute="top" secondItem="uWr-U1-1CU" secondAttribute="topMargin" constant="3" id="WEz-x8-PTA"/>
-                                                <constraint firstItem="ZWa-GN-OFc" firstAttribute="trailing" secondItem="uWr-U1-1CU" secondAttribute="trailingMargin" id="Y4S-df-KKd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -161,18 +156,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-ch-yJQ">
-                                                    <rect key="frame" x="328.5" y="11" width="38.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-ch-yJQ">
+                                                    <rect key="frame" x="207" y="11" width="160" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="92t-ch-yJQ" firstAttribute="trailing" secondItem="Ibw-wE-zW0" secondAttribute="trailingMargin" id="Rxm-QM-0mF"/>
                                                 <constraint firstItem="4bs-jH-bVh" firstAttribute="leading" secondItem="Ibw-wE-zW0" secondAttribute="leading" constant="8" id="feZ-b1-FC7"/>
-                                                <constraint firstItem="92t-ch-yJQ" firstAttribute="top" secondItem="Ibw-wE-zW0" secondAttribute="topMargin" constant="3" id="gCq-ji-m6D"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="92t-ch-yJQ" secondAttribute="bottom" constant="3.5" id="gDn-tu-Z4E"/>
                                                 <constraint firstItem="4bs-jH-bVh" firstAttribute="top" secondItem="Ibw-wE-zW0" secondAttribute="top" constant="8" id="gg7-Ss-jq6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -212,10 +205,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="2rG-VU-ueW" secondAttribute="trailing" constant="8" id="574-Q3-BSR"/>
-                                                <constraint firstItem="2rG-VU-ueW" firstAttribute="top" secondItem="0Xk-fM-0d2" secondAttribute="top" constant="8" id="BGx-yC-P76"/>
                                                 <constraint firstItem="Zgz-GS-o66" firstAttribute="leading" secondItem="0Xk-fM-0d2" secondAttribute="leading" constant="8" id="acz-zc-YVR"/>
-                                                <constraint firstAttribute="bottom" secondItem="2rG-VU-ueW" secondAttribute="bottom" constant="5.5" id="hGO-Ue-3mW"/>
                                                 <constraint firstItem="Zgz-GS-o66" firstAttribute="top" secondItem="0Xk-fM-0d2" secondAttribute="top" constant="8" id="kQJ-hf-pWy"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -373,18 +363,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Records" id="hgI-fO-gsR">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Save" id="LNu-hA-zjS">
-                                <connections>
-                                    <action selector="actSaveRecord:" destination="UUe-Wk-5jE" id="hNm-S8-W94"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Clear" id="Dv2-YI-HFF">
-                                <connections>
-                                    <action selector="actClearRecord:" destination="UUe-Wk-5jE" id="sRc-Dh-jEV"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="LNu-hA-zjS">
+                            <connections>
+                                <action selector="actSaveRecord:" destination="UUe-Wk-5jE" id="hNm-S8-W94"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="outConditions" destination="aKb-Ip-HhF" id="eWA-Pg-rrf"/>
@@ -392,7 +375,6 @@
                         <outlet property="outMoments" destination="eIX-rL-vVz" id="eeD-7S-rEA"/>
                         <outlet property="outNotes" destination="BlX-OI-gB0" id="sli-Xh-YBb"/>
                         <outlet property="outRank" destination="92t-ch-yJQ" id="cPf-Ep-pma"/>
-                        <outlet property="outRemark" destination="2rG-VU-ueW" id="eAr-hF-MN4"/>
                         <outlet property="outRole" destination="ZWa-GN-OFc" id="gaM-rq-5ig"/>
                     </connections>
                 </tableViewController>
