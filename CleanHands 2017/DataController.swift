@@ -33,8 +33,6 @@ class DataController {
         
         roleAndrank = readDictionaryPlist(filename: "roleAndrank")!
     }
-    // need dictionary that stores String : String Array for
-    
     
     // get role full text
     func getRoleFullText(role: String) -> String{
