@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class RecordsVCCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class RecordsVCCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMailComposeViewControllerDelegate {
     
     let dc = DataController.sharedInstance
     
@@ -54,6 +55,39 @@ class RecordsVCCollectionView: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
+    
+    @IBAction func actSend(_ sender: UIBarButtonItem) {
+        
+        let fileName = "Data.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        
+        var csvText = "\(fileName)"
+        
+        do {
+            try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+            
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+            vc.excludedActivityTypes = [
+                UIActivityType.assignToContact,
+                UIActivityType.saveToCameraRoll,
+                UIActivityType.postToFlickr,
+                UIActivityType.postToVimeo,
+                UIActivityType.postToTencentWeibo,
+                UIActivityType.postToTwitter,
+                UIActivityType.postToFacebook,
+                UIActivityType.openInIBooks,
+                UIActivityType.mail
+            ]
+            present(vc, animated: true, completion: nil)
+            
+        } catch {
+            
+            print("Failed to create file")
+            print("\(error)")
+        }
+        
+    }
+
     
     
 

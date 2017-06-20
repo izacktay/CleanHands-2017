@@ -250,10 +250,7 @@ class ConditionsTVC: UITableViewController {
         rTVC.condition = selCondArr
         
     }
-    
-    
-    
-    
+
     
     func cancelAct (_ alert : UIAlertAction){
         

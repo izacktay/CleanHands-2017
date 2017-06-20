@@ -4,89 +4,305 @@
 <dict>
 	<key>Nurse</key>
 	<array>
-		<string>Nurse full text</string>
+		<string>Nurse</string>
 		<array>
-			<string>Student</string>
-			<string>Experienced</string>
-		</array>
-	</array>
-	<key>Doctor</key>
-	<array>
-		<string>Doctor full text</string>
-		<array>
-			<string>Junior</string>
-			<string>Senior</string>
+			<string>NM/NC</string>
+			<string>RN</string>
+			<string>EN</string>
+			<string>PCA</string>
+			<string>Nur Student</string>
 		</array>
 	</array>
 	<key>ENDO</key>
-	<array/>
+	<array>
+		<string>Endocrinology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>ENT</key>
-	<array/>
+	<array>
+		<string>ENT</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>ER</key>
-	<array/>
+	<array>
+		<string>Emergency</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>EYE</key>
-	<array/>
+	<array>
+		<string>Eye</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>GASTRO</key>
-	<array/>
+	<array>
+		<string>Gastroenterology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>GERI</key>
-	<array/>
+	<array>
+		<string>Geriatic</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>HCA</key>
-	<array/>
+	<array>
+		<string>Health Care Attendant</string>
+		<array>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>Housekeeper</key>
-	<array/>
+	<array>
+		<string>Housekeeper</string>
+		<array>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>ID</key>
-	<array/>
+	<array>
+		<string>Infectious Disease</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>MED</key>
-	<array/>
+	<array>
+		<string>Medicine</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>MED Student</key>
-	<array/>
+	<array>
+		<string>Medical Student</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>NES</key>
-	<array/>
+	<array>
+		<string>Neuro Surgery</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>NEURO</key>
-	<array/>
-	<key>NUR Student</key>
-	<array/>
+	<array>
+		<string>Neurology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>OT</key>
-	<array/>
+	<array>
+		<string>Occupational Therapist</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>OTO</key>
-	<array/>
+	<array>
+		<string>Orthopaedic</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Student</string>
+		</array>
+	</array>
 	<key>Other AHP</key>
-	<array/>
-	<key>PSY</key>
-	<array/>
+	<array>
+		<string>Other AHP</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>PT</key>
-	<array/>
+	<array>
+		<string>Physiotherapist</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Student</string>
+		</array>
+	</array>
 	<key>Phlebo</key>
-	<array/>
+	<array>
+		<string>Phlebotomist</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Student</string>
+		</array>
+	</array>
 	<key>Porter</key>
-	<array/>
+	<array>
+		<string>Porter</string>
+		<array>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>RAD</key>
-	<array/>
+	<array>
+		<string>Radiology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>REHAB</key>
-	<array/>
+	<array>
+		<string>Rehabilitation</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>RENAL</key>
-	<array/>
+	<array>
+		<string>Renal</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>RESPI</key>
-	<array/>
+	<array>
+		<string>Respiratory</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>RT</key>
-	<array/>
+	<array>
+		<string>Respiratory Therapist</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Student</string>
+		</array>
+	</array>
 	<key>Radiographer</key>
-	<array/>
+	<array>
+		<string>Radiographer</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>ST</key>
-	<array/>
+	<array>
+		<string>Speech Therapist</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>SUR</key>
-	<array/>
+	<array>
+		<string>Surgical</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>UNKNOWN</key>
-	<array/>
+	<array>
+		<string>Unknown Dept</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>URO</key>
-	<array/>
+	<array>
+		<string>Urology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>ANA</key>
-	<array/>
+	<array>
+		<string>Anaesthesia</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>CVM</key>
-	<array/>
+	<array>
+		<string>Cardiology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>DENTAL</key>
-	<array/>
+	<array>
+		<string>Dental</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 	<key>DERM</key>
-	<array/>
+	<array>
+		<string>Dermatology</string>
+		<array>
+			<string>Senior</string>
+			<string>Junior</string>
+			<string>Unknown</string>
+		</array>
+	</array>
 </dict>
 </plist>

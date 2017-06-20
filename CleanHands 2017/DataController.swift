@@ -95,6 +95,7 @@ class DataController {
     var roleFullText : String = "Role Full Text"
     var rank : String = "Rank"
     var location : String = "Location"
+    var remarks : String = "Remarks"
     var momentName : String = "Moments"
     // saving the title and notes
     var notesTitle : String = ""
@@ -181,12 +182,12 @@ class DataController {
         
         let fileName = "records.csv"
         let path = NSURL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(fileName)
-        var csvText = "Date,Location,Job Role,Rank,5 moments,Action,Note,N95,Glove,Gown,Mask\n"
+        var csvText = "Date,Location,Job Role,Role Full Text,Rank,Staff Category,5 moments,Action,No Of Compliance,No Of Opportunity,Note,Golve,Gown,Surgical Mask,N95,Remarks\n"
         
         //month/year, time, location, job role, job role full text, rank, staff category, 5 moments, compliance, no of compliance, no of opportunity, note, glove, gown, sur mask, n95, remarks
         
         for record in recordArr {
-            let newLine = "\(record.date),\(record.location),\(record.role),\(record.rank),\(record.observationMoment),\(record.complianceAction),\(record.note),\(record.n95Mask),\(record.glove),\(record.gown),\(record.surgicalMask)\n"
+            let newLine = "\(record.date),\(record.location),\(record.role),\(record.roleFull),\(record.rank),staff category,\(record.observationMoment),\(record.complianceAction),\(record.noOfCompliance),1,\(record.note),\(record.glove),\(record.gown),\(record.surgicalMask),\(record.n95Mask),\(record.remarks)\n"
             csvText.append(newLine)
         }
         
@@ -201,24 +202,37 @@ class DataController {
     
     
     func createRecord() -> Void {
+
         
         let record1 = RecordData()
+        record1.date = Date()
         //role, location, rank
-        record1.role = role
         record1.location = location
+        record1.role = role
+        record1.roleFull = roleFullText
         record1.rank = rank
-        
+        record1.observationMoment = momentName
         
         //saving the conditions, glove gown...
         let notes = observationPoint.notes
         let action = observationPoint.actions
-        let conitions = observationPoint.conditions
+        if (action == "No"){
+            record1.noOfCompliance = "0"
+        }
+        record1.complianceAction = action
+        record1.note = notes
+        record1.glove = glove.items
+        record1.gown = gown.items
+        record1.surgicalMask = mask.items
+        record1.n95Mask = n95.items
+        record1.remarks = remarks
+        
         
         //moment name
         
         
 
-        record1.date = Date()
+        
         
         recordArr.append(record1)
         

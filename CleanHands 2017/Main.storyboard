@@ -197,7 +197,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remarks" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP8-pq-AQy">
-                                                    <rect key="frame" x="207" y="11" width="160" height="21"/>
+                                                    <rect key="frame" x="121" y="11" width="246" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -353,6 +353,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7Ko-dH-AeC" kind="show" id="dJ7-kc-OXC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -375,6 +378,7 @@
                         <outlet property="outMoments" destination="eIX-rL-vVz" id="eeD-7S-rEA"/>
                         <outlet property="outNotes" destination="BlX-OI-gB0" id="sli-Xh-YBb"/>
                         <outlet property="outRank" destination="92t-ch-yJQ" id="cPf-Ep-pma"/>
+                        <outlet property="outRemarks" destination="kP8-pq-AQy" id="yuI-er-x3S"/>
                         <outlet property="outRole" destination="ZWa-GN-OFc" id="gaM-rq-5ig"/>
                     </connections>
                 </tableViewController>
@@ -430,7 +434,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsN-eQ-Eb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0yC-Hd-fSU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="131"/>
+            <point key="canvasLocation" x="3985" y="146"/>
         </scene>
         <!--Notes-->
         <scene sceneID="bLI-wu-W51">
@@ -634,7 +638,7 @@
                                 <items>
                                     <barButtonItem systemItem="action" id="aeV-gC-C9u">
                                         <connections>
-                                            <action selector="actSend:" destination="WTG-Uq-XgV" id="11r-hS-c3s"/>
+                                            <action selector="actSend:" destination="WTG-Uq-XgV" id="bgJ-KZ-w9H"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -701,7 +705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4Z-h4-wOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2313" y="61"/>
+            <point key="canvasLocation" x="3177" y="74"/>
         </scene>
         <!--Ranks-->
         <scene sceneID="cmI-bN-Q4d">
@@ -734,7 +738,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHt-x7-Ihv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hPB-qv-I7T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6636" y="-490"/>
+            <point key="canvasLocation" x="6105" y="-471"/>
         </scene>
         <!--Roles-->
         <scene sceneID="fQt-ls-quT">

@@ -33,11 +33,9 @@ class SettingsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let rTVC = segue.destination as! RecordsTVC
         if (outSwitch.isOn == true){
-            rTVC.switchString = "true"
-            rTVC.switchState = true
+        
         }else if (outSwitch.isOn == false){
-            rTVC.switchString = "false"
-            rTVC.switchState = false
+            
         }
     }
     

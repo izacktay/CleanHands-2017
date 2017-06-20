@@ -18,12 +18,13 @@ class RecordsTVC: UITableViewController {
     @IBOutlet weak var outMoments: UILabel!
     @IBOutlet weak var outConditions: UILabel!
     @IBOutlet weak var outNotes: UILabel!
+    @IBOutlet weak var outRemarks: UILabel!
+    
+    var remarksTF : UITextField?
     
     var updatedRole = ""
     var updatedRank = ""
     var updatedLoc = ""
-    var switchState : Bool = false
-    var switchString : String = ""
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -116,14 +117,15 @@ class RecordsTVC: UITableViewController {
             dc.role = outRole.text!
             dc.rank = outRank.text!
             dc.location = outLoc.text!
+            dc.remarks = outRemarks.text!
             dc.roleFullText = dc.getRoleFullText(role: dc.role)
             
-        
-            
             dc.createRecord()
-
+            dc.createCSV()
         }
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -175,6 +177,9 @@ class RecordsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
+        if (indexPath == [0,3]){
+            addRemarks()
+        }
         
         if (section == 2){
             if let cell = tableView.cellForRow(at: indexPath){
@@ -192,6 +197,39 @@ class RecordsTVC: UITableViewController {
                 cell.accessoryType = .none
             }
         }
+    }
+    
+    func addRemarks(){
+        let alert = UIAlertController(title: "Add a remark",
+                                      message: "",
+                                      preferredStyle:UIAlertControllerStyle.alert)
+        
+        // create a UIAlertAction object
+        let okAction = UIAlertAction(title:"OK",
+                                     style: UIAlertActionStyle.default,
+                                     handler: addLocation)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        
+        // add the UIAlertAction object to the UIAlertController object
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        alert.addTextField{
+            (UITextField) in self.remarksTF = UITextField
+        }
+        
+        
+        // display the UIAlertController object
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func addLocation(_ alert : UIAlertAction) {
+        
+        if (remarksTF?.text) != nil{
+            outRemarks.text = remarksTF?.text
+            outRemarks.textColor = UIColor.blue
+        }
+        
+        
     }
     
     

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840799CF1EEE748C00679037 /* testplist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840799CE1EEE748C00679037 /* testplist.plist */; };
 		840799D11EEE84BB00679037 /* CustomRecordsTVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */; };
 		84083D471EF297F80074DEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84083D461EF297F80074DEA9 /* Main.storyboard */; };
 		84092AF11EB0571A00ABAED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84092AF01EB0571A00ABAED7 /* AppDelegate.swift */; };
@@ -24,13 +23,13 @@
 		844454261EC17FCC00506083 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844454251EC17FCC00506083 /* NotesVC.swift */; };
 		8451655C1EB4489500A72524 /* RoleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451655B1EB4489500A72524 /* RoleTVC.swift */; };
 		845165661EB46D0900A72524 /* RankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845165651EB46D0900A72524 /* RankTVC.swift */; };
+		84781E741EF988E800FC7F8F /* RecordsCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84781E731EF988E800FC7F8F /* RecordsCollectionViewVC.swift */; };
 		847891531EB4B75D00BC09C5 /* RecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847891521EB4B75D00BC09C5 /* RecordData.swift */; };
 		849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */; };
 		84A84E2D1EE7DCE70082C27C /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A84E2C1EE7DCE70082C27C /* locations.plist */; };
 		84A84E2F1EE7DF270082C27C /* roleAndrank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A84E2E1EE7DF270082C27C /* roleAndrank.plist */; };
 		84A84E311EE7F5800082C27C /* RecordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A84E301EE7F5800082C27C /* RecordsData.swift */; };
 		84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C57E5C1EB7449800B53470 /* ConditionsTVC.swift */; };
-		84DE081C1EE7B05000746C21 /* RecordsCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE081B1EE7B05000746C21 /* RecordsCollectionViewVC.swift */; };
 		84DE081E1EE7B28000746C21 /* RecordsVCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE081D1EE7B28000746C21 /* RecordsVCCollectionView.swift */; };
 		84DE08201EE7B57E00746C21 /* RecordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE081F1EE7B57E00746C21 /* RecordsCollectionViewCell.swift */; };
 		DF486B781ED551360020C5B5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF486B771ED551360020C5B5 /* MainMenuViewController.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		840799CE1EEE748C00679037 /* testplist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testplist.plist; sourceTree = "<group>"; };
 		840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecordsTVCCell.swift; sourceTree = "<group>"; };
 		84083D461EF297F80074DEA9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84092AED1EB0571A00ABAED7 /* CleanHands 2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CleanHands 2017.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,13 +55,13 @@
 		844454251EC17FCC00506083 /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		8451655B1EB4489500A72524 /* RoleTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleTVC.swift; sourceTree = "<group>"; };
 		845165651EB46D0900A72524 /* RankTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTVC.swift; sourceTree = "<group>"; };
+		84781E731EF988E800FC7F8F /* RecordsCollectionViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewVC.swift; sourceTree = "<group>"; };
 		847891521EB4B75D00BC09C5 /* RecordData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 		849C0DBF1EB6012D00240CF4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		84A84E2C1EE7DCE70082C27C /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		84A84E2E1EE7DF270082C27C /* roleAndrank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = roleAndrank.plist; sourceTree = "<group>"; };
 		84A84E301EE7F5800082C27C /* RecordsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsData.swift; sourceTree = "<group>"; };
 		84C57E5C1EB7449800B53470 /* ConditionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsTVC.swift; sourceTree = "<group>"; };
-		84DE081B1EE7B05000746C21 /* RecordsCollectionViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewVC.swift; sourceTree = "<group>"; };
 		84DE081D1EE7B28000746C21 /* RecordsVCCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsVCCollectionView.swift; sourceTree = "<group>"; };
 		84DE081F1EE7B57E00746C21 /* RecordsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF486B771ED551360020C5B5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -128,13 +126,12 @@
 				841E54941EC06F9B0072F776 /* ConditionsData.swift */,
 				841E54961EC07C370072F776 /* ObservationPointData.swift */,
 				DF486B771ED551360020C5B5 /* MainMenuViewController.swift */,
-				84DE081B1EE7B05000746C21 /* RecordsCollectionViewVC.swift */,
+				84781E731EF988E800FC7F8F /* RecordsCollectionViewVC.swift */,
 				84DE081D1EE7B28000746C21 /* RecordsVCCollectionView.swift */,
 				84DE081F1EE7B57E00746C21 /* RecordsCollectionViewCell.swift */,
 				84A84E301EE7F5800082C27C /* RecordsData.swift */,
 				84A84E2C1EE7DCE70082C27C /* locations.plist */,
 				84A84E2E1EE7DF270082C27C /* roleAndrank.plist */,
-				840799CE1EEE748C00679037 /* testplist.plist */,
 				840B6B561EEBAACC000A78A2 /* MomentsCollectionViewCell.swift */,
 				840799D01EEE84BB00679037 /* CustomRecordsTVCCell.swift */,
 				841456591EEFC86C0081CE08 /* MomentsTVC.swift */,
@@ -215,7 +212,6 @@
 				84092AF81EB0571A00ABAED7 /* Assets.xcassets in Resources */,
 				84083D471EF297F80074DEA9 /* Main.storyboard in Resources */,
 				84A84E2F1EE7DF270082C27C /* roleAndrank.plist in Resources */,
-				840799CF1EEE748C00679037 /* testplist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +231,6 @@
 				847891531EB4B75D00BC09C5 /* RecordData.swift in Sources */,
 				84092B2D1EB0D8CB00ABAED7 /* LocationTVC.swift in Sources */,
 				840B6B571EEBAACC000A78A2 /* MomentsCollectionViewCell.swift in Sources */,
-				84DE081C1EE7B05000746C21 /* RecordsCollectionViewVC.swift in Sources */,
 				DF486B781ED551360020C5B5 /* MainMenuViewController.swift in Sources */,
 				841E54971EC07C370072F776 /* ObservationPointData.swift in Sources */,
 				84C57E5D1EB7449800B53470 /* ConditionsTVC.swift in Sources */,
@@ -247,6 +242,7 @@
 				8414565A1EEFC86C0081CE08 /* MomentsTVC.swift in Sources */,
 				8451655C1EB4489500A72524 /* RoleTVC.swift in Sources */,
 				849C0DC01EB6012D00240CF4 /* SettingsVC.swift in Sources */,
+				84781E741EF988E800FC7F8F /* RecordsCollectionViewVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

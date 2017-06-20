@@ -46,9 +46,9 @@ class MomentsTVC: UITableViewController {
             moments = "Before Contact"
         }else if (row == 1){
             moments = "After Contact"
-        }else if (row == 1){
+        }else if (row == 2){
             moments = "Before Exposure"
-        }else if (row == 1){
+        }else if (row == 3){
             moments = "After Exposure"
         }else {
             moments = "After Environment"

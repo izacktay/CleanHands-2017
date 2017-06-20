@@ -22,6 +22,8 @@ class RecordData {
     var roleFull : String = ""
     var rank : String = ""
     var complianceAction : String = ""
+    var noOfCompliance : String = ""
+    var noOfOpportunity : String = "1"
     
     // 5 observation points
     var observationMoment : String = ""
@@ -34,6 +36,7 @@ class RecordData {
     var glove : String = ""
     var gown : String = ""
     var surgicalMask : String = ""
+    var remarks : String = ""
     
 
     
