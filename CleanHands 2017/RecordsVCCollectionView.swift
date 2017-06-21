@@ -6,6 +6,7 @@
 //  Copyright © 2017 Republic Polytechnic. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import MessageUI
 
@@ -20,6 +21,7 @@ class RecordsVCCollectionView: UIViewController, UICollectionViewDelegate, UICol
 
         outCollectionView.delegate = self
         outCollectionView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,34 +60,78 @@ class RecordsVCCollectionView: UIViewController, UICollectionViewDelegate, UICol
     
     @IBAction func actSend(_ sender: UIBarButtonItem) {
         
-        let fileName = "Data.csv"
-        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
-        var csvText = "\(fileName)"
+        let mailComposeViewController = configuredMailComposeViewController()
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
-        do {
-            try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
-            
-            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
-            vc.excludedActivityTypes = [
-                UIActivityType.assignToContact,
-                UIActivityType.saveToCameraRoll,
-                UIActivityType.postToFlickr,
-                UIActivityType.postToVimeo,
-                UIActivityType.postToTencentWeibo,
-                UIActivityType.postToTwitter,
-                UIActivityType.postToFacebook,
-                UIActivityType.openInIBooks,
-                UIActivityType.mail
-            ]
-            present(vc, animated: true, completion: nil)
-            
-        } catch {
-            
-            print("Failed to create file")
-            print("\(error)")
+        mailComposerVC.setToRecipients(["nurdin@gmail.com"])
+        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposerVC, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
         }
         
+//        let fileName = "Data.csv"
+//        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+//        
+//        var csvText = "\(fileName)"
+//        
+//        do {
+//            try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+//            
+//            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+//            vc.excludedActivityTypes = [
+//                UIActivityType.assignToContact,
+//                UIActivityType.saveToCameraRoll,
+//                UIActivityType.postToFlickr,
+//                UIActivityType.postToVimeo,
+//                UIActivityType.postToTencentWeibo,
+//                UIActivityType.postToTwitter,
+//                UIActivityType.postToFacebook,
+//                UIActivityType.openInIBooks,
+//                UIActivityType.mail
+//            ]
+//            present(vc, animated: true, completion: nil)
+//            
+//        } catch {
+//            
+//            print("Failed to create file")
+//            print("\(error)")
+//        }
+        
+    }
+    
+    
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["nurdin@gmail.com"])
+        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func showSendMailErrorAlert() {
+        let mailError = UIAlertController()
+        mailError.title = "Could Not Send Email"
+        mailError.message = "Your device could not send e-mail.  Please check e-mail configuration and try again."
+        let okAction = UIAlertAction(title:"OK",
+                                     style: UIAlertActionStyle.default,
+                                     handler: nil)
+        mailError.addAction(okAction)
+        
+        present(mailError, animated: true, completion: nil)
     }
 
     

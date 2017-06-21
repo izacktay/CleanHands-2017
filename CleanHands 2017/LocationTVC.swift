@@ -99,9 +99,7 @@ class LocationTVC: UITableViewController, MFMailComposeViewControllerDelegate {
   }
   
   
-  func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-    controller.dismiss(animated: true, completion: nil)
-  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {

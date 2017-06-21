@@ -244,13 +244,13 @@ class ConditionsTVC: UITableViewController {
         selCondArr[1] = dc.glove
         selCondArr[2] = dc.gown
         selCondArr[3] = dc.mask
-
+        
         let rTVC = segue.destination as! RecordsTVC
         // assign the selCondtionsArr to the BooleanArr array list in ObservationsTVC
         rTVC.condition = selCondArr
         
     }
-
+    
     
     func cancelAct (_ alert : UIAlertAction){
         
@@ -258,18 +258,22 @@ class ConditionsTVC: UITableViewController {
     
     
     func passAnswersAt(indexPath: IndexPath){
-        let cell = tableView.cellForRow(at: indexPath) as! CustomRecordsTVCCell
-        if let segmentItem = cell.outSegmentControl{
-            // set the yes/NA/no
-            if (indexPath == [1,0]){
-                dc.n95.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-            }else if (indexPath == [2,0]){
-                dc.glove.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-            }else if (indexPath == [2,1]){
-                dc.gown.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
-            }else if (indexPath == [3,0]){
-                dc.mask.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+        
+        if let cells = tableView.cellForRow(at: indexPath){
+            let cell = cells as! CustomRecordsTVCCell
+            if let segmentItem = cell.outSegmentControl{
+                // set the yes/NA/no
+                if (indexPath == [1,0]){
+                    dc.n95.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+                }else if (indexPath == [2,0]){
+                    dc.glove.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+                }else if (indexPath == [2,1]){
+                    dc.gown.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+                }else if (indexPath == [3,0]){
+                    dc.mask.items = (segmentItem.selectedSegmentIndex != UISegmentedControlNoSegment) ? segmentItem.titleForSegment(at: segmentItem.selectedSegmentIndex)! : ""
+                }
             }
+            
         }
     }
     

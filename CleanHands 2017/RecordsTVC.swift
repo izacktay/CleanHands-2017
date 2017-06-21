@@ -175,6 +175,7 @@ class RecordsTVC: UITableViewController {
         outMoments.textColor = UIColor.blue
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         if (indexPath == [0,3]){
@@ -184,6 +185,7 @@ class RecordsTVC: UITableViewController {
         if (section == 2){
             if let cell = tableView.cellForRow(at: indexPath){
                 cell.accessoryType = .checkmark
+                action = (cell.textLabel?.text)!
             }
             
         }
@@ -195,6 +197,7 @@ class RecordsTVC: UITableViewController {
         if (section == 2){
             if let cell = tableView.cellForRow(at: indexPath){
                 cell.accessoryType = .none
+                
             }
         }
     }
